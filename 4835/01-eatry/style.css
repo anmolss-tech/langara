@@ -1,0 +1,1035 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Spectral", serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Screen Reader Only */
+.assist-as-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Header Styles */
+.banner-as-top {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.banner-as-content {
+  max-width: 3000px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 70px;
+  transition: all 0.3s ease;
+  grid-template-columns: auto 1fr auto auto;
+}
+
+/* Logo Styles */
+.brand-as-mark {
+  position: relative;
+}
+
+.brand-as-image {
+  height: 60px;
+  width: auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.brand-as-mark::before {
+  display: none;
+  content: "eatery";
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 7rem;
+  line-height: 1;
+  color: #000;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+/* Navigation Styles */
+.nav-as-prime {
+  justify-self: center;
+  transition: all 0.3s ease;
+}
+
+.nav-as-items {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  transition: all 0.3s ease;
+}
+
+.nav-as-items a {
+  text-decoration: none;
+  color: #333;
+  font-family: "Spectral SC", serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.nav-as-items a:hover {
+  color: white;
+  background-color: #ff1493;
+}
+
+.lang-as-select:hover {
+  color: white;
+  background-color: #ff1493;
+  cursor: pointer;
+}
+
+/* Header*/
+.banner-as-end {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-self: end;
+  transition: all 0.3s ease;
+}
+
+.social-as-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-as-list a {
+  color: #333;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.social-as-list a:hover {
+  color: white;
+  background-color: #ff1493;
+}
+
+.lang-as-select {
+  font-family: "Spectral SC", serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Menu Toggle Button */
+.nav-as-toggle {
+  display: none;
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: "Spectral SC", serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  justify-self: center;
+  transition: all 0.3s ease;
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.nav-as-toggle:hover {
+  background: #ff1493;
+}
+
+.mobile-as-nav {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.mobile-as-nav .social-as-list {
+  display: flex;
+  gap: 2rem;
+}
+
+.mobile-as-nav .social-as-list a {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.mobile-as-nav .lang-as-select {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Food Sections */
+.food-as-zone {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+.bfast-as-zone {
+  background-image: url("images/breakfast.jpg");
+}
+.lunch-as-zone {
+  background-image: url("images/lunch.jpg");
+}
+.dinner-as-zone {
+  background-image: url("images/dinner.jpg");
+}
+
+.food-as-label {
+  margin: 0 auto 20px auto;
+  align-self: flex-start;
+  width: auto;
+}
+
+.food-as-label span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 50px;
+  background-color: #ff1493;
+  color: white;
+  font-family: "Spectral SC", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.food-as-content {
+  width: 100%;
+  max-width: 3200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-as-grid {
+  display: grid;
+  gap: 0;
+  width: 100%;
+  grid-template-columns: 1fr;
+}
+
+.menu-as-box {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1rem;
+  margin-bottom: 1px;
+}
+
+.menu-as-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.menu-as-table caption {
+  font-family: "Spectral SC", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding-bottom: 0.75rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 1rem;
+}
+
+.menu-as-table tr td {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 1rem;
+}
+
+.menu-as-table tr:last-child td {
+  border-bottom: none;
+}
+
+.menu-as-table td:first-child {
+  font-weight: 600;
+}
+
+.menu-as-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+}
+
+/* Staff Section */
+.team-as-zone {
+  background: linear-gradient(to bottom, rgb(9, 7, 40), black);
+  padding: 6rem 0 1rem 0;
+  color: white;
+}
+
+.team-as-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.team-as-grid {
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr;
+}
+
+.team-as-member {
+  position: relative;
+  width: 520px;
+  height: 520px;
+  border-radius: 240px 240px 0 0;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.team-as-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+  margin: 0;
+}
+
+.team-as-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.75) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  height: 9.4rem;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-content: end;
+}
+
+.team-as-name {
+  font-family: "Spectral SC", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  color: #a4dded;
+}
+
+.team-as-bio {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Contact Section */
+.reach-as-zone {
+  background: #d1d1e9;
+  padding: 4rem 0;
+  color: #000000;
+}
+
+.reach-as-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.reach-as-title,
+.brand-as-reach {
+  font-family: "Spectral SC", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000000;
+}
+
+.reach-as-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.brand-as-reach {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+
+.reach-as-detail p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+/* Map Area Section */
+.map-as-area {
+  background: white;
+  padding: 4rem 0;
+  max-width: 3200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+}
+
+.map-as-frame {
+  width: 100%;
+  border: 1px solid #ddd;
+  line-height: 0;
+}
+
+.map-as-frame iframe {
+  width: 100%;
+  height: 400px;
+  display: block;
+}
+
+/* Blog Section */
+.post-as-zone {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.post-as-content {
+  max-width: 3200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.post-as-title {
+  font-family: "Spectral SC", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.post-as-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-auto-rows: 200px minmax(10rem, auto);
+}
+
+.post-as-item {
+  background: #f8f9fa;
+  display: grid;
+  grid-row: auto / span 2;
+  grid-template-rows: subgrid;
+  overflow: visible;
+}
+
+.post-as-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  grid-row: 1 / 2;
+}
+
+.post-as-text {
+  grid-row: 2 / 3;
+  position: relative;
+  z-index: 10;
+  width: 85%;
+  padding-left: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: -50px;
+}
+
+.post-as-head {
+  background: white;
+  color: #000000;
+  padding: 0.75rem 1rem;
+  font-family: "Spectral SC", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.post-as-intro {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  padding: 1rem 1rem 1.5rem 1rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer */
+.site-as-foot {
+  display: none;
+  background: #333;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 900;
+}
+
+.foot-as-nav {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0 1rem;
+}
+
+.foot-as-nav a {
+  color: white;
+  text-decoration: none;
+  font-family: "Spectral SC", serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.foot-as-nav a:hover {
+  color: #ff1493;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Mobile: up to 790px */
+@media (max-width: 790px) {
+  .banner-as-top {
+    border-bottom: none;
+    padding: 1.5rem 0 1rem 0;
+  }
+
+  .banner-as-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    padding: 0 1rem;
+    text-align: center;
+    gap: 1rem;
+    min-height: auto;
+    align-items: center;
+  }
+
+  .brand-as-mark {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-bottom: 0.5rem;
+  }
+  .brand-as-image {
+    display: none;
+  }
+  .brand-as-mark::before {
+    display: block;
+    font-size: 7rem;
+  }
+
+  .nav-as-toggle {
+    display: block;
+    grid-row: 2;
+    grid-column: 1 / -1;
+    margin: 1rem 0;
+    justify-self: center;
+  }
+
+  .nav-as-prime {
+    display: none;
+    grid-row: 3;
+    grid-column: 1 / -1;
+    background: white;
+    padding: 2rem 0;
+    text-align: center;
+    justify-self: stretch;
+    width: 100%;
+  }
+  .nav-as-prime.is-as-active {
+    display: block;
+  }
+
+  .nav-as-items {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .nav-as-items a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    color: #333;
+    font-family: "Spectral SC", serif;
+    text-transform: uppercase;
+  }
+
+  .mobile-as-nav {
+    display: flex;
+    justify-content: center;
+  }
+  .banner-as-end {
+    display: none;
+  }
+
+  .food-as-label {
+    width: 95%;
+  }
+  .food-as-zone {
+    padding: 4rem 0 2rem 0;
+  }
+  .food-as-content {
+    padding: 0 1rem;
+  }
+  .food-as-label span {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-left: 0;
+    width: 100%;
+  }
+  .menu-as-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-as-content {
+    padding: 0 1rem;
+  }
+
+  .reach-as-content {
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  .map-as-area {
+    padding: 2rem 1rem;
+    max-width: 100%;
+  }
+
+  .post-as-content {
+    padding: 0 1rem;
+  }
+  .post-as-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px minmax(12rem, auto);
+  }
+  .post-as-text {
+    width: 90%;
+    margin-top: -60px;
+    padding-left: 1rem;
+  }
+  .post-as-head {
+    font-size: 1.3rem;
+    padding: 0.6rem 0.8rem;
+  }
+  .post-as-intro {
+    padding: 0.75rem 0.8rem 1.25rem 0.8rem;
+    font-size: 22px;
+  }
+
+  .site-as-foot {
+    display: block;
+  }
+  body {
+    padding-bottom: 60px;
+  }
+}
+
+/* Tablet: 790px to 1102px */
+@media (min-width: 790px) and (max-width: 1102px) {
+  .banner-as-top {
+    padding: 1rem 0;
+  }
+  .banner-as-content {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: flex-start;
+    column-gap: 3rem;
+    row-gap: 0;
+    padding: 0 2rem;
+    min-height: auto;
+  }
+
+  .brand-as-mark {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    align-self: flex-start;
+    margin-top: 0.25rem;
+    position: static;
+  }
+  .brand-as-image {
+    display: none !important;
+  }
+  .brand-as-mark::before {
+    display: block;
+    content: "eatery";
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6.5rem;
+    font-weight: 900;
+    color: #000;
+    text-transform: lowercase;
+    line-height: 1;
+    text-align: left;
+  }
+
+  .nav-as-prime {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: flex-start;
+    display: block;
+    padding: 0;
+    background: none;
+    margin-top: 3rem;
+    width: 100%;
+  }
+  .nav-as-items {
+    flex-direction: row;
+    gap: 2.5rem;
+    margin-bottom: 0;
+    padding: 0;
+    justify-content: end;
+  }
+  .nav-as-items a {
+    font-family: "Spectral", serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #333;
+    padding: 0.5rem 0;
+  }
+  .nav-as-items a:hover {
+    color: white;
+    background-color: #ff1493;
+  }
+  .lang-as-select:hover {
+    color: white;
+    background-color: #ff1493;
+    cursor: pointer;
+  }
+  .banner-as-end {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  .social-as-list {
+    gap: 1.5rem;
+    padding: 0;
+  }
+  .social-as-list a {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  .social-as-list a:hover {
+    color: white;
+    background-color: #ff1493;
+  }
+  .lang-as-select {
+    font-family: "Spectral", serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: lowercase;
+    letter-spacing: 0;
+  }
+
+  .nav-as-toggle {
+    display: none;
+  }
+  .mobile-as-nav {
+    display: none !important;
+  }
+
+  .food-as-zone {
+    background-attachment: fixed;
+    flex-direction: row;
+    align-items: center;
+  }
+  .food-as-content {
+    padding: 0 2rem;
+  }
+  .food-as-label {
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+  .food-as-label span {
+    margin-left: 2rem;
+  }
+  .menu-as-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+  }
+  .menu-as-box.main-as-dish {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  .menu-as-box.side-as-dish {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    margin: 10px 5px 0 0px;
+  }
+  .menu-as-box.bever-as-age {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    margin: 10px 0 0 10px;
+  }
+
+  .team-as-content {
+    padding: 0;
+  }
+  .team-as-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    justify-items: center;
+  }
+
+  .team-as-member {
+    width: 30vw;
+    height: 30vw;
+  }
+  .reach-as-content {
+    padding: 0 2rem;
+  }
+
+  .map-as-area {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .post-as-content {
+    padding: 0 2rem;
+  }
+  .post-as-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px minmax(12rem, auto);
+  }
+}
+
+/* Desktop: 1102px to 3200px */
+@media (min-width: 1102px) and (max-width: 3200px) {
+  .banner-as-top {
+    padding: 0.5rem 0;
+  }
+  .banner-as-content {
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-rows: auto;
+    padding: 0.5rem 2rem;
+    padding-right: 0;
+    gap: 2rem;
+    align-items: center;
+    min-height: 70px;
+  }
+
+  .brand-as-mark {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: auto;
+    margin-top: 0;
+    position: relative;
+  }
+  .brand-as-mark::before {
+    display: none;
+  }
+  .brand-as-image {
+    display: block;
+    height: 200px;
+  }
+
+  .nav-as-prime {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: center;
+    margin-top: 0;
+    width: auto;
+  }
+  .nav-as-items {
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .nav-as-items a {
+    font-family: "Spectral SC", serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    color: #333;
+  }
+  .nav-as-items a:hover {
+    color: white;
+    background-color: #ff1493;
+  }
+  .lang-as-select:hover {
+    color: white;
+    background-color: #ff1493;
+    cursor: pointer;
+  }
+  .banner-as-end {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: end;
+    gap: 1.5rem;
+    margin-top: 0;
+  }
+  .social-as-list {
+    gap: 1rem;
+  }
+  .social-as-list a {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  .social-as-list a:hover {
+    color: white;
+    background-color: #ff1493;
+  }
+  .lang-as-select {
+    font-family: "Spectral SC", serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333;
+    font-size: 1rem;
+  }
+
+  .nav-as-toggle {
+    display: none;
+  }
+  .mobile-as-nav {
+    display: none;
+  }
+
+  .food-as-zone {
+    background-attachment: fixed;
+    flex-direction: row;
+    align-items: center;
+  }
+  .food-as-content {
+    padding: 0 2rem;
+  }
+  .food-as-label {
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-right: 1.5rem;
+    width: auto;
+  }
+  .food-as-label span {
+    margin-left: 3rem;
+  }
+  .menu-as-grid {
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    max-width: 100%;
+  }
+  .menu-as-box.main-as-dish {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    margin: 0;
+  }
+  .menu-as-box.side-as-dish {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin: 0;
+  }
+  .menu-as-box.bever-as-age {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    margin: 20px 0 0 0;
+  }
+
+  .team-as-content {
+    padding: 0 2rem;
+    margin: 0;
+  }
+
+  .team-as-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+  }
+  .team-as-member {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .reach-as-content {
+    padding: 0 2rem;
+  }
+
+  .map-as-area {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .post-as-content {
+    padding: 0 2rem;
+  }
+  .post-as-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px minmax(10rem, auto);
+  }
+}
+@media (min-width: 1201px) and (max-width: 3200px) {
+  .team-as-grid {
+    gap: 2.3rem;
+  }
+  .brand-as-image {
+    height: 200px;
+  }
+}
