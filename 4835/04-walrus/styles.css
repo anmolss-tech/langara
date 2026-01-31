@@ -1,0 +1,277 @@
+/* CSS for 'The Walrus' Exercise - Final Version Implements all
+specified features including new header and overlays. */ /* 1. General Styles &
+Keyframes */
+:root {
+  --deep-pink: hotpink;
+  --pulse-gray: #333333; /* Dark gray
+for visible pulse */
+  --transition-speed: 0.4s;
+  --animation-delay: 0.3s; /*
+Duration for the border transition */
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #fff;
+  color: #333;
+}
+footer {
+  text-align: center;
+}
+@keyframes pulse-bg {
+  from {
+    background-color: black;
+  }
+  to {
+    background-color: var(--pulse-gray);
+  }
+} /* 2.
+Header Styling */
+.site-header {
+  background-color: rgba(255, 255, 255, 0.85); /*
+Translucent */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+  z-index: 1000;
+  border-bottom: 1px solid #ddd;
+}
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+}
+.header-right {
+  justify-content: flex-end;
+}
+.site-header .site-title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  flex: 2;
+}
+.site-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  transition: color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+}
+.site-header button .fas {
+  font-size: 1.5rem;
+}
+.site-header button span {
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+.site-header button.is-active {
+  color: var(--deep-pink);
+} /* 3. Full-Screen Overlays (Menus & Search) */
+.menu-main,
+.menu-share {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  z-index: 900; /* Lower
+z-index for menus */
+  background-color: black;
+  color: white;
+}
+.search-form {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  z-index: 950; /* Higher z-index for
+search */
+  background-color: black;
+  color: white;
+}
+.menu-main {
+  left: 0;
+  width: 50%;
+  transform: translateX(-100%);
+  transition: transform var(--transition-speed) ease-in-out;
+}
+.menu-share {
+  right: 0;
+  width: 50%;
+  transform: translateX(100%);
+  transition: transform var(--transition-speed) ease-in-out;
+}
+.menu-main.is-active,
+.menu-share.is-active {
+  transform: translateX(0);
+}
+.menu-main ul,
+.menu-share ul {
+  list-style: none;
+  padding: 80px 40px 40px 40px;
+  margin: 0;
+}
+.menu-main a,
+.menu-share a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 15px 0;
+  font-size: 1.2rem;
+  position: relative;
+  overflow: hidden;
+} /* Menu animations */
+.menu-main a::after,
+.menu-share a::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  height: 2px;
+  background-color: var(--deep-pink);
+  transition: width var(--animation-delay) ease-out;
+  width: 0;
+}
+.menu-main a::after {
+  left: 0;
+}
+.menu-main a:hover::after {
+  width: 100%;
+}
+.menu-share a::after {
+  right: 0;
+}
+.menu-share a:hover::after {
+  width: 100%;
+}
+.menu-main a:hover,
+.menu-share a:hover {
+  animation-name: pulse-bg;
+  animation-duration: 1s; /* Faster pulse */
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: var(--animation-delay);
+} /* Search Overlay Styling */
+.search-form {
+  left: 0;
+  width: 100vw;
+  transform: translateY(-100%);
+  transition: transform var(--transition-speed) ease-in-out;
+}
+.search-form.is-active {
+  transform: translateY(0);
+}
+.search-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 100%;
+}
+.search-form-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.search-input-wrapper {
+  display: flex;
+}
+.search-form input[type="search"] {
+  background: none;
+  border: 2px solid white;
+  border-right: none;
+  padding: 10px;
+  color: white;
+  font-size: 1.2rem;
+}
+.search-form button[type="submit"] {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+#dismiss-search-btn {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+} /* 4. Main Content & Banner */
+.content {
+  max-width: 800px;
+  margin: 20px auto;
+}
+.article-banner {
+  display: block;
+  padding-top: 60px;
+}
+.article-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.article-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+}
+@media (max-width: 900px) {
+  body {
+    margin: 15px;
+  }
+  .byline {
+    font-weight: bold;
+  }
+}
+@media (min-width: 900px) {
+  .article-banner {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 30px;
+    background-color: black;
+    color: white;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    margin-top: 60px; /* Account for fixed header */
+  }
+  .article-banner .article-header {
+    flex: 1;
+    color: white;
+  }
+  .article-banner .article-image {
+    flex: 1.5;
+    margin-bottom: 0;
+    min-width: 0;
+  }
+  .content {
+    margin-top: 20px;
+  }
+}
