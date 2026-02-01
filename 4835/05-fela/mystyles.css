@@ -1,0 +1,395 @@
+header{
+  background-color: black;
+}
+/* TASK1=============================Typography*/
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.51;
+ }
+ h1 {
+  font-family: "Oswald", Helvetica, sans-serif, Arial;
+  font-size: 3.157rem;
+  color: #788880;
+ }
+ h1 span {
+  color: #c46d3b;
+ }
+ h2 {
+  font-size: 2.369rem;
+ }
+ h3 {
+  border-bottom: 1px solid #2f2f2fc3;
+ }
+ h4 {
+  font-family: "Alegreya Sans SC", Helvetica, sans-serif, Arial, ;
+  letter-spacing: 0.14em;
+  font-weight: 490;
+ }
+
+ 
+ /* TASK2=============================Menu Borders*/
+ header nav li:not(:last-child) {
+  border-right: 1.1px solid white;
+ }
+ 
+ 
+ /* TASK3=============================First Paragraph Stylings*/
+ article p:first-of-type::first-line {
+  font-weight: bold;
+ }
+ 
+ article p:first-of-type::first-letter {
+  font-size: 2.7em;
+  float: left;
+  padding: 0.1em 0.25em;
+  margin-right: 0.15em;
+  margin-bottom: 0.05em;
+  font-weight: bold;
+  color: #030303;
+  font-family: sans-serif;
+  line-height: 0.8;
+  background-color: #ffffff;
+  border: 1px solid #ababab;
+  border-radius: 6px;
+ }
+ 
+ /* TASK4=============================Section Intros*/
+ article h3 + p {
+  font-family: "charter", georgia, times, "Times New Roman", serif;
+  font-weight: 551;
+  font-size: 1.09rem;
+  line-height: 1.5;
+  margin-bottom: 1.73em;
+  margin-top: 1.1em; 
+}
+
+
+/* TASK5=============================Fix Ugly Text Wrap*/
+article p img.floatleft,
+article p img.floatright {
+  float: none;
+  display: block;
+  margin: 2em auto;
+  border: 1px solid #eee;
+  padding: 3px;
+  background-color: white;
+}
+
+@media (min-width: 700px) { 
+  article p img.floatleft {
+      float: left;
+      margin: 0.3em 1.8em 0.2em 0;
+      max-width: 40%;
+  }
+  article p img.floatright {
+      float: right;
+      margin: 0.3em 0 0.2em 1.8em;
+      max-width: 40%;
+  }
+}
+
+
+/* TASK6=============================Pseudo-Borders*/
+article h4:not(h3 + h4) {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding-bottom: 0.2em; 
+}
+article h4:not(h3 + h4)::after {
+  content: "";             
+  flex-grow: 1;            
+  height: 1px;             
+  background-color: #ccc; 
+  margin-left: 10px;       
+}
+
+
+article h4:not(h3 + h4) {
+   display: grid;                      
+   grid-template-columns: auto 1fr;
+   align-items: center;                
+   column-gap: 10px;                   
+}
+article h4:not(h3 + h4)::after {
+  content: "";              
+  height: 1px;              
+  background-color: #ccc;  
+}
+
+
+
+/* TASK7=============================Footer Styling*/
+footer {
+  background-color: #0A0A1E; 
+  padding: 20px;              
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+footer .footer-title {
+  color: #FFFFFF;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+footer nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+footer nav li {
+  margin-bottom: 10px;
+}
+
+footer nav a {
+  text-decoration: underline;
+  display: inline-block; 
+  padding: 2px 0;
+  
+}
+
+footer nav a:hover,
+footer nav a:focus {
+  text-decoration: underline;
+}
+
+footer nav a[href*="artists/contemporary/"] {
+  color: #A0C0C8; 
+}
+footer nav a[href*="artists/originators"] {
+  color: #c76f52; 
+}
+footer nav a[href*="companies/"] {
+  color: #E0E0E0;
+}
+
+@media (min-width: 1001px) {
+  footer {
+    /* Add the background image */
+    background-image: url('fela-images/fela1.jpg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    padding-left: 240px;                      
+  }
+}
+
+
+/* TASK8=============================Gallery Layout*/
+.gallery {
+  background-color: #000000;
+  display: grid;
+  gap: 0.75em;
+  padding: 1em;
+}
+.gallery figure {
+  margin: 0;
+  background-color: #000000;
+  color: white;
+  padding: 0.5em;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+}
+.gallery figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+  margin-bottom: 0.5em;
+}
+.gallery figcaption {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  text-align: center;
+  margin-top: auto;  
+  min-height: 2.4em; 
+}
+/* Two columns, last 10 img hidden */
+.gallery { grid-template-columns: repeat(2, 1fr); }
+.gallery figure:nth-child(n+11) { display: none; }
+
+@media (min-width: 768px) and (max-width: 1199px) { /* Four columns */
+  .gallery { grid-template-columns: repeat(4, 1fr); gap: 1em; }
+  .gallery figure:nth-child(n+11) { display: flex; }
+}
+@media (min-width: 1200px) { /* Five columns */
+  .gallery { grid-template-columns: repeat(5, 1fr); gap: 1em; }
+  .gallery figure:nth-child(n+11) { display: flex; } 
+}
+
+/* TASK9=============================Figcaptions*/
+.gallery figure:has(img[data-band="africa 70"]) {
+  --caption-color: aqua;
+}
+.gallery figure:has(img[data-band="egypt 80"]) {
+  --caption-color: deeppink;
+}
+
+.gallery figure figcaption {
+  color: var(--caption-color, white);
+}
+/* TASK10=============================Gallery*/
+article {
+  overflow: hidden; 
+}
+article > *:not(.gallery) {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+/* TASK11=============================Icons*/
+header nav li a {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+header nav li a::before { 
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  display: block;
+  font-size: 1.2em; 
+  margin-bottom: 0.15em;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+header nav li:nth-child(1) a::before { content: "\f015"; } /* home */
+header nav li:nth-child(2) a::before { content: "\f001"; } /* music */
+header nav li:nth-child(3) a::before { content: "\f26c"; } /* video */
+header nav li:nth-child(4) a::before { content: "\f0e0"; } /* contact */
+
+header nav li a:hover { 
+  color: #c46d3b; 
+}
+
+/* TASK12=============================Icons*/
+#search {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 5px 8px 5px 30px;
+  font-family: sans-serif;
+  font-size: 0.9em;
+  vertical-align: middle;
+  width: 120px; 
+  color: #c46d3b; 
+  transition: width 0.3s ease-in-out;
+  outline: none;
+}
+/* --- Placeholder Text Styling --- */
+#search::placeholder {
+  color: #788880;
+  opacity: 1;
+}
+#search:focus {
+  width: 260px;
+}
+
+
+/* TASK13=============================CoolList*/
+ul.recordings {
+  list-style-type: none;
+  padding-left: 1.5em; 
+  margin-top: 1em;
+}
+
+ul.recordings li {
+  font-family: Arial, Helvetica, sans-serif; 
+  padding-left: 1.9em;             
+  position: relative;
+  margin-bottom: 0.6em;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #444;                               
+}
+
+ul.recordings li::before {
+  content: "\2764";                   
+  font-family: "Font Awesome 6 Free"; 
+  font-weight: 900;                   
+  position: absolute;
+  left: 0;
+  top: 0.05em;          
+  font-style: normal;   
+  font-size: 1em;       
+  line-height: inherit; 
+    
+}
+
+ul.recordings li:nth-child(odd)::before {
+  color: #788880;
+}
+
+ul.recordings li:nth-child(even)::before {
+  color: #c46d3b; 
+}
+  
+
+/* TASK14=============================*/
+@media (max-width: 899px) {
+  header h1 { 
+      font-size: 2.5rem; 
+  }
+  header h1 span {
+      margin-bottom: 0; 
+      display: block;
+      text-align: center;
+  }
+}
+
+/* TASK15============================= MoonSun*/
+.dark-mode .label-icon::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 1.3em;
+  color: #ffffff; 
+  content: "\f186"; 
+  transition: color 0.29s ease;
+  cursor: pointer;
+}
+header .dark-mode .label-icon:hover::before { 
+  color: #c46d3b; 
+}
+
+header .dark-mode input[type="checkbox"]#dark-mode-input { 
+  /* Hiding checkbox */
+  clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px;
+  overflow: hidden; position: absolute; white-space: nowrap; width: 1px;
+}
+@media (min-width: 992px) { /* Large screens - top right */
+  header .dark-mode {
+      position: absolute;
+      top: 1.2rem; 
+      right: 1.5rem;
+      padding: 0;
+  }
+}
+
+/* TASK16=============================ToggleDarkLightMode*/
+body:has(footer.dark-mode-selected) {
+  background-color: #002;
+  color: #e8e8eade;
+
+  .label-icon::before {
+    content: "\f185"; /* Sun icon */
+    transition: color 0.2s ease;
+  }
+  ul.recordings li{
+    color: #e8e8eade;
+  }
+}
