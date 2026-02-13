@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlendModeTester2025-Revision</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header-as-topbar">
+      <h1 class="h1-as-title">blend mode tester</h1>
+      <button class="button-as-toggler">choose mode</button>
+      <button class="button-as-filter">greyscale images</button>
+      <button class="button-as-closer">close panels</button>
+    </header>
+
+    <div class="div-as-shell">
+      <form action="" class="form-as-controls">
+        <ul class="ul-as-options">
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Normal</span>
+              <input
+                type="radio"
+                name="blendmode"
+                id="normal"
+                value="normal"
+                checked
+              />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Multiply</span>
+              <input
+                type="radio"
+                name="blendmode"
+                id="multiply"
+                value="multiply"
+              />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Color</span>
+              <input type="radio" name="blendmode" id="color" value="color" />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Screen</span>
+              <input type="radio" name="blendmode" id="screen" value="screen" />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Overlay</span>
+              <input
+                type="radio"
+                name="blendmode"
+                id="overlay"
+                value="overlay"
+              />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Darken</span>
+              <input type="radio" name="blendmode" id="darken" value="darken" />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Lighten</span>
+              <input
+                type="radio"
+                name="blendmode"
+                id="lighten"
+                value="lighten"
+              />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Color-Dodge</span>
+              <input
+                type="radio"
+                name="blendmode"
+                id="color-dodge"
+                value="color-dodge"
+              />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Color-Burn</span>
+              <input
+                type="radio"
+                name="blendmode"
+                id="color-burn"
+                value="color-burn"
+              />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Soft-Light</span>
+              <input
+                type="radio"
+                name="blendmode"
+                id="soft-light"
+                value="soft-light"
+              />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Hard-Light</span>
+              <input
+                type="radio"
+                name="blendmode"
+                id="hard-light"
+                value="hard-light"
+              />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Exclusion</span>
+              <input
+                type="radio"
+                name="blendmode"
+                id="exclusion"
+                value="exclusion"
+              />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Saturation</span>
+              <input
+                type="radio"
+                name="blendmode"
+                id="saturation"
+                value="saturation"
+              />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+          <li class="li-as-option">
+            <label>
+              <span class="span-as-label">Luminosity</span>
+              <input
+                type="radio"
+                name="blendmode"
+                id="luminosity"
+                value="luminosity"
+              />
+              <span class="span-as-indicator"></span>
+            </label>
+          </li>
+        </ul>
+
+        <label class="label-as-customizer">
+          <div class="div-as-heading">Choose Custom Color.</div>
+          <input type="color" id="color-picker" class="input-as-chooser" />
+        </label>
+      </form>
+      <main class="main-as-primary">
+        <div class="div-as-gallery">
+          <figure class="figure-as-item">
+            <img
+              srcset="
+                images/600/img-1.webp   600w,
+                images/900/img-1.webp   900w,
+                images/1600/img-1.webp 1600w,
+                images/2560/img-1.webp 2560w
+              "
+              sizes="
+                (min-width: 1200px) 25vw,
+                (min-width: 900px) 33vw,
+                (min-width: 600px) 50vw,
+                100vw
+              "
+              src="images/900/img-1.webp"
+              alt="Dummy1"
+              loading="lazy"
+            />
+            <figcaption class="figcaption-as-overlay"><span></span></figcaption>
+          </figure>
+          <figure class="figure-as-item">
+            <img
+              srcset="
+                images/600/img-2.webp   600w,
+                images/900/img-2.webp   900w,
+                images/1600/img-2.webp 1600w,
+                images/2560/img-2.webp 2560w
+              "
+              sizes="
+                (min-width: 1200px) 25vw,
+                (min-width: 900px) 33vw,
+                (min-width: 600px) 50vw,
+                100vw
+              "
+              src="images/900/img-2.webp"
+              alt="Dummy2"
+              loading="lazy"
+            />
+            <figcaption class="figcaption-as-overlay"><span></span></figcaption>
+          </figure>
+          <figure class="figure-as-item">
+            <img
+              srcset="
+                images/600/img-3.webp   600w,
+                images/900/img-3.webp   900w,
+                images/1600/img-3.webp 1600w,
+                images/2560/img-3.webp 2560w
+              "
+              sizes="
+                (min-width: 1200px) 25vw,
+                (min-width: 900px) 33vw,
+                (min-width: 600px) 50vw,
+                100vw
+              "
+              src="images/900/img-3.webp"
+              alt="Dummy3"
+              loading="lazy"
+            />
+            <figcaption class="figcaption-as-overlay"><span></span></figcaption>
+          </figure>
+          <figure class="figure-as-item">
+            <img
+              srcset="
+                images/600/img-4.webp   600w,
+                images/900/img-4.webp   900w,
+                images/1600/img-4.webp 1600w,
+                images/2560/img-4.webp 2560w
+              "
+              sizes="
+                (min-width: 1200px) 25vw,
+                (min-width: 900px) 33vw,
+                (min-width: 600px) 50vw,
+                100vw
+              "
+              src="images/900/img-4.webp"
+              alt="Dummy4"
+              loading="lazy"
+            />
+            <figcaption class="figcaption-as-overlay"><span></span></figcaption>
+          </figure>
+          <figure class="figure-as-item">
+            <img
+              srcset="
+                images/600/img-5.webp   600w,
+                images/900/img-5.webp   900w,
+                images/1600/img-5.webp 1600w,
+                images/2560/img-5.webp 2560w
+              "
+              sizes="
+                (min-width: 1200px) 25vw,
+                (min-width: 900px) 33vw,
+                (min-width: 600px) 50vw,
+                100vw
+              "
+              src="images/900/img-5.webp"
+              alt="Dummy5"
+              loading="lazy"
+            />
+            <figcaption class="figcaption-as-overlay"><span></span></figcaption>
+          </figure>
+          <figure class="figure-as-item">
+            <img
+              srcset="
+                images/600/img-6.webp   600w,
+                images/900/img-6.webp   900w,
+                images/1600/img-6.webp 1600w,
+                images/2560/img-6.webp 2560w
+              "
+              sizes="
+                (min-width: 1200px) 25vw,
+                (min-width: 900px) 33vw,
+                (min-width: 600px) 50vw,
+                100vw
+              "
+              src="images/900/img-6.webp"
+              alt="Dummy6"
+              loading="lazy"
+            />
+            <figcaption class="figcaption-as-overlay"><span></span></figcaption>
+          </figure>
+          <figure class="figure-as-item">
+            <img
+              srcset="
+                images/600/img-7.webp   600w,
+                images/900/img-7.webp   900w,
+                images/1600/img-7.webp 1600w,
+                images/2560/img-7.webp 2560w
+              "
+              sizes="
+                (min-width: 1200px) 25vw,
+                (min-width: 900px) 33vw,
+                (min-width: 600px) 50vw,
+                100vw
+              "
+              src="images/900/img-7.webp"
+              alt="Dummy7"
+              loading="lazy"
+            />
+            <figcaption class="figcaption-as-overlay"><span></span></figcaption>
+          </figure>
+          <figure class="figure-as-item">
+            <img
+              srcset="
+                images/600/img-8.webp   600w,
+                images/900/img-8.webp   900w,
+                images/1600/img-8.webp 1600w,
+                images/2560/img-8.webp 2560w
+              "
+              sizes="
+                (min-width: 1200px) 25vw,
+                (min-width: 900px) 33vw,
+                (min-width: 600px) 50vw,
+                100vw
+              "
+              src="images/900/img-8.webp"
+              alt="Dummy8"
+              loading="lazy"
+            />
+            <figcaption class="figcaption-as-overlay"><span></span></figcaption>
+          </figure>
+          <figure class="figure-as-item">
+            <img
+              srcset="
+                images/600/img-9.webp   600w,
+                images/900/img-9.webp   900w,
+                images/1600/img-9.webp 1600w,
+                images/2560/img-9.webp 2560w
+              "
+              sizes="
+                (min-width: 1200px) 25vw,
+                (min-width: 900px) 33vw,
+                (min-width: 600px) 50vw,
+                100vw
+              "
+              src="images/900/img-9.webp"
+              alt="Dummy9"
+              loading="lazy"
+            />
+            <figcaption class="figcaption-as-overlay"><span></span></figcaption>
+          </figure>
+          <figure class="figure-as-item">
+            <img
+              srcset="
+                images/600/img-10.webp   600w,
+                images/900/img-10.webp   900w,
+                images/1600/img-10.webp 1600w,
+                images/2560/img-10.webp 2560w
+              "
+              sizes="
+                (min-width: 1200px) 25vw,
+                (min-width: 900px) 33vw,
+                (min-width: 600px) 50vw,
+                100vw
+              "
+              src="images/900/img-10.webp"
+              alt="Dummy10"
+              loading="lazy"
+            />
+            <figcaption class="figcaption-as-overlay"><span></span></figcaption>
+          </figure>
+          <figure class="figure-as-item">
+            <img
+              srcset="
+                images/600/img-11.webp   600w,
+                images/900/img-11.webp   900w,
+                images/1600/img-11.webp 1600w,
+                images/2560/img-11.webp 2560w
+              "
+              sizes="
+                (min-width: 1200px) 25vw,
+                (min-width: 900px) 33vw,
+                (min-width: 600px) 50vw,
+                100vw
+              "
+              src="images/900/img-11.webp"
+              alt="Dummy11"
+              loading="lazy"
+            />
+            <figcaption class="figcaption-as-overlay"><span></span></figcaption>
+          </figure>
+          <figure class="figure-as-item">
+            <img
+              srcset="
+                images/600/img-12.webp   600w,
+                images/900/img-12.webp   900w,
+                images/1600/img-12.webp 1600w,
+                images/2560/img-12.webp 2560w
+              "
+              sizes="
+                (min-width: 1200px) 25vw,
+                (min-width: 900px) 33vw,
+                (min-width: 600px) 50vw,
+                100vw
+              "
+              src="images/900/img-12.webp"
+              alt="Dummy12"
+              loading="lazy"
+            />
+            <figcaption class="figcaption-as-overlay"><span></span></figcaption>
+          </figure>
+        </div>
+      </main>
+    </div>
+    <footer class="footer-as-bottombar">
+      <p>
+        <span class="span-as-descriptor">current blend mode: </span>
+        <span class="span-as-value">normal</span>
+      </p>
+    </footer>
+  </body>
+</html>
