@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Midterm Exam - Web Development</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="site-container">
+      <!-- On mobile, this acts as a header. On desktop, it's the sidebar. -->
+      <header class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+          <div class="sidebar-intro">
+            <h2>midterm</h2>
+            <p>just another worpdress site</p>
+          </div>
+        </div>
+        <div class="sidebar-logo-area">
+          <img
+            src="images/goat-logo.png"
+            alt="Goat Outline Logo"
+            class="logo-img-outline"
+          />
+          <!-- <div class="logo-img-box">goat</div> -->
+        </div>
+        <div class="sidebar-scrollable-content">
+          <!-- <a href="#" class="sidebar-cta-button">Goat</a> -->
+
+          <nav class="main-nav" id="mainNav">
+            <div class="menu-section">
+              <h3 class="menu-section-title">Menu Section 1</h3>
+              <ul>
+                <li><a href="#">Lorem, ipsum dolor.</a></li>
+                <li><a href="#">Ipsum dolor sit.</a></li>
+              </ul>
+            </div>
+            <div class="menu-section">
+              <h3 class="menu-section-title">Menu Section 2</h3>
+              <ul>
+                <li><a href="#">Ipsum dolor sit.</a></li>
+                <li><a href="#">Impedit dolor sit.</a></li>
+                <li><a href="#">Eum dolor sit.</a></li>
+                <li><a href="#">Totam dolor sit.</a></li>
+              </ul>
+            </div>
+            <div class="menu-section">
+              <h3 class="menu-section-title">Menu Section 3</h3>
+              <ul>
+                <li><a href="#">Expedita dolor sit.</a></li>
+                <li><a href="#">Cspsum dolor sit.</a></li>
+                <li><a href="#">Quas dolor sit.</a></li>
+              </ul>
+            </div>
+            <div class="menu-section">
+              <h3 class="menu-section-title">Menu Section 4</h3>
+              <ul>
+                <li><a href="#">Lorem, ipsum.</a></li>
+                <li><a href="#">Lorem, ipsum dolor.</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+          <button class="sidebar-collapse-toggle" id="sidebarCollapseToggle">
+            <svg
+              class="icon-hamburger"
+              viewBox="0 0 100 80"
+              width="24"
+              height="24"
+            >
+              <rect width="100" height="15" rx="8"></rect>
+              <rect y="30" width="100" height="15" rx="8"></rect>
+              <rect y="60" width="100" height="15" rx="8"></rect>
+            </svg>
+            <span>Menu</span>
+            <svg
+              class="icon-arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main content area for all articles -->
+      <main class="main-content">
+        <div class="article-wrapper">
+          <!-- Article 1: Full Width -->
+          <article class="article article-full-width">
+            <div class="article-image-container">
+              <img src="images/u1.jpg" alt="abcd" />
+              <div class="image-overlay">
+                <table>
+                  <tr>
+                    <th>Camera</th>
+                    <td>Fujifilm X-T4</td>
+                  </tr>
+                  <tr>
+                    <th>File</th>
+                    <td>DSCF1023.RAF</td>
+                  </tr>
+                  <tr>
+                    <th>ISO</th>
+                    <td>200</td>
+                  </tr>
+                  <tr>
+                    <th>Lens</th>
+                    <td>XF 56mm f/1.2 R</td>
+                  </tr>
+                  <tr>
+                    <th>Aperture</th>
+                    <td>f/2.0</td>
+                  </tr>
+                  <tr>
+                    <th>Shutter Speed</th>
+                    <td>1/500s</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="article-content">
+              <h2>Vibrant Digital Canvas</h2>
+              <p class="article-meta">
+                By Alex Rivera | Oct 28, 2023 | Digital Art
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod
+                malesuada. Mauris sodales.
+              </p>
+              <a href="#" class="continue-reading">Continue Reading</a>
+            </div>
+          </article>
+
+          <!-- Grid for articles 2 through 7 -->
+          <div class="article-grid">
+            <article class="article">
+              <div class="article-image-container">
+                <img src="images/u2.jpg" alt="efg" />
+                <div class="image-overlay">
+                  <table>
+                    <tr>
+                      <th>Camera</th>
+                      <td>Canon EOS R6</td>
+                    </tr>
+                    <tr>
+                      <th>File</th>
+                      <td>IMG_2483.CR3</td>
+                    </tr>
+                    <tr>
+                      <th>ISO</th>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <th>Lens</th>
+                      <td>RF 85mm f/1.2L</td>
+                    </tr>
+                    <tr>
+                      <th>Aperture</th>
+                      <td>f/1.2</td>
+                    </tr>
+                    <tr>
+                      <th>Shutter Speed</th>
+                      <td>1/1000s</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="article-content">
+                <h2>Reflections in Blue</h2>
+                <p class="article-meta">
+                  By Brianna Chen | Nov 05, 2023 | Nature
+                </p>
+                <p>
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                  occaecat cupidatat.
+                </p>
+                <a href="#" class="continue-reading">Continue Reading</a>
+              </div>
+            </article>
+            <article class="article">
+              <div class="article-image-container">
+                <img src="images/u3.jpg" alt="ijk" />
+                <div class="image-overlay">
+                  <table>
+                    <tr>
+                      <th>Camera</th>
+                      <td>Nikon Z7 II</td>
+                    </tr>
+                    <tr>
+                      <th>File</th>
+                      <td>Z7II_00123.NEF</td>
+                    </tr>
+                    <tr>
+                      <th>ISO</th>
+                      <td>320</td>
+                    </tr>
+                    <tr>
+                      <th>Lens</th>
+                      <td>24-70mm f/2.8 S</td>
+                    </tr>
+                    <tr>
+                      <th>Aperture</th>
+                      <td>f/4</td>
+                    </tr>
+                    <tr>
+                      <th>Shutter Speed</th>
+                      <td>1/1600s</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="article-content">
+                <h2>Journey Through Woods</h2>
+                <p class="article-meta">
+                  By Carlos Gomez | Nov 12, 2023 | Travel
+                </p>
+                <p>
+                  Suspendisse potenti. Nunc finibus, nisl ut efficitur sodales,
+                  sem metus rhoncus purus, ac dapibus felis nisi eu neque.
+                  Praesent non.
+                </p>
+                <a href="#" class="continue-reading">Continue Reading</a>
+              </div>
+            </article>
+            <article class="article">
+              <div class="article-image-container">
+                <img src="images/u4.jpg" alt="asdsa" />
+                <div class="image-overlay">
+                  <table>
+                    <tr>
+                      <th>Camera</th>
+                      <td>Sony A7 IV</td>
+                    </tr>
+                    <tr>
+                      <th>File</th>
+                      <td>DSC04817.ARW</td>
+                    </tr>
+                    <tr>
+                      <th>ISO</th>
+                      <td>125</td>
+                    </tr>
+                    <tr>
+                      <th>Lens</th>
+                      <td>FE 35mm f/1.4 GM</td>
+                    </tr>
+                    <tr>
+                      <th>Aperture</th>
+                      <td>f/2.8</td>
+                    </tr>
+                    <tr>
+                      <th>Shutter Speed</th>
+                      <td>1/320s</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="article-content">
+                <h2>Urban Golden Hour</h2>
+                <p class="article-meta">
+                  By Danaerys Smith | Nov 19, 2023 | Urban
+                </p>
+                <p>
+                  Phasellus eget enim eu lectus vestibulum vestibulum.
+                  Suspendisse sodales pellentesque elementum. Praesent nonummy
+                  mi in odio. Nunc interdum lacus sit.
+                </p>
+                <a href="#" class="continue-reading">Continue Reading</a>
+              </div>
+            </article>
+            <article class="article">
+              <div class="article-image-container">
+                <img src="images/u5.jpg" alt="sadadsad" />
+                <div class="image-overlay">
+                  <table>
+                    <tr>
+                      <th>Camera</th>
+                      <td>Leica Q2</td>
+                    </tr>
+                    <tr>
+                      <th>File</th>
+                      <td>L1002020.DNG</td>
+                    </tr>
+                    <tr>
+                      <th>ISO</th>
+                      <td>100</td>
+                    </tr>
+                    <tr>
+                      <th>Lens</th>
+                      <td>Summilux 28mm f/1.7 ASPH</td>
+                    </tr>
+                    <tr>
+                      <th>Aperture</th>
+                      <td>f/5.6</td>
+                    </tr>
+                    <tr>
+                      <th>Shutter Speed</th>
+                      <td>1/2000s</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="article-content">
+                <h2>Texture and Time</h2>
+                <p class="article-meta">
+                  By Evan Wright | Nov 26, 2023 | Architecture
+                </p>
+                <p>
+                  Nam libero tempore, cum soluta nobis est eligendi optio cumque
+                  nihil impedit quo minus id quod maxime placeat facere.
+                </p>
+                <a href="#" class="continue-reading">Continue Reading</a>
+              </div>
+            </article>
+            <article class="article">
+              <div class="article-image-container">
+                <img src="images/u5.jpg" alt="xcas" />
+                <div class="image-overlay">
+                  <table>
+                    <tr>
+                      <th>Camera</th>
+                      <td>Pentax 645Z</td>
+                    </tr>
+                    <tr>
+                      <th>File</th>
+                      <td>IMGP7654.DNG</td>
+                    </tr>
+                    <tr>
+                      <th>ISO</th>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <th>Lens</th>
+                      <td>75mm f/2.8</td>
+                    </tr>
+                    <tr>
+                      <th>Aperture</th>
+                      <td>f/8</td>
+                    </tr>
+                    <tr>
+                      <th>Shutter Speed</th>
+                      <td>1/250s</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="article-content">
+                <h2>Whispers of Lavender</h2>
+                <p class="article-meta">
+                  By Fatima Khan | Dec 03, 2023 | Floral
+                </p>
+                <p>
+                  Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                  corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                  consequatur.
+                </p>
+                <a href="#" class="continue-reading">Continue Reading</a>
+              </div>
+            </article>
+            <article class="article">
+              <div class="article-image-container">
+                <img src="images/u7.jpg" alt="asdassd" />
+                <div class="image-overlay">
+                  <table>
+                    <tr>
+                      <th>Camera</th>
+                      <td>Hasselblad X2D 100C</td>
+                    </tr>
+                    <tr>
+                      <th>File</th>
+                      <td>X2D00123.3FR</td>
+                    </tr>
+                    <tr>
+                      <th>ISO</th>
+                      <td>64</td>
+                    </tr>
+                    <tr>
+                      <th>Lens</th>
+                      <td>XCD 55mm f/2.5</td>
+                    </tr>
+                    <tr>
+                      <th>Aperture</th>
+                      <td>f/5.6</td>
+                    </tr>
+                    <tr>
+                      <th>Shutter Speed</th>
+                      <td>1/800s</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="article-content">
+                <h2>Morning Mountain Mist</h2>
+                <p class="article-meta">
+                  By George Martin | Dec 10, 2023 | Landscape
+                </p>
+                <p>
+                  Quis autem vel eum iure reprehenderit qui in ea voluptate
+                  velit esse quam nihil molestiae consequatur, vel illum qui.
+                </p>
+                <a href="#" class="continue-reading">Continue Reading</a>
+              </div>
+            </article>
+          </div>
+          <!-- end article-grid -->
+
+          <!-- Article 8: Full Width -->
+          <article class="article article-full-width">
+            <div class="article-image-container">
+              <img src="images/u8.jpg" alt="sadsadsa" />
+              <div class="image-overlay">
+                <table>
+                  <tr>
+                    <th>Camera</th>
+                    <td>Olympus OM-D E-M5 Mark III</td>
+                  </tr>
+                  <tr>
+                    <th>File</th>
+                    <td>P6211234.ORF</td>
+                  </tr>
+                  <tr>
+                    <th>ISO</th>
+                    <td>800</td>
+                  </tr>
+                  <tr>
+                    <th>Lens</th>
+                    <td>12-40mm f/2.8 PRO</td>
+                  </tr>
+                  <tr>
+                    <th>Aperture</th>
+                    <td>f/4</td>
+                  </tr>
+                  <tr>
+                    <th>Shutter Speed</th>
+                    <td>1/125s</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="article-content">
+              <h2>Geometric Ocean Dreams</h2>
+              <p class="article-meta">By Hannah Lee | Dec 17, 2023 | Design</p>
+              <p>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                blanditiis praesentium voluptatum deleniti atque corrupti quos
+                dolores et.
+              </p>
+              <a href="#" class="continue-reading">Continue Reading</a>
+            </div>
+          </article>
+
+          <!-- Grid for articles 9 through 14 -->
+          <div class="article-grid">
+            <article class="article">
+              <div class="article-image-container">
+                <img src="images/u9.jpg" alt="zxczxc" />
+                <div class="image-overlay">
+                  <table>
+                    <tr>
+                      <th>Camera</th>
+                      <td>Panasonic GH6</td>
+                    </tr>
+                    <tr>
+                      <th>File</th>
+                      <td>GH6_0456.RW2</td>
+                    </tr>
+                    <tr>
+                      <th>ISO</th>
+                      <td>160</td>
+                    </tr>
+                    <tr>
+                      <th>Lens</th>
+                      <td>Leica 10-25mm f/1.7</td>
+                    </tr>
+                    <tr>
+                      <th>Aperture</th>
+                      <td>f/2.2</td>
+                    </tr>
+                    <tr>
+                      <th>Shutter Speed</th>
+                      <td>1/640s</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="article-content">
+                <h2>Autumn's Fiery Breath</h2>
+                <p class="article-meta">
+                  By Ivan Petrov | Dec 24, 2023 | Seasonal
+                </p>
+                <p>
+                  Temporibus autem quibusdam et aut officiis debitis aut rerum
+                  necessitatibus saepe eveniet ut et voluptates repudiandae sint
+                  et molestiae.
+                </p>
+                <a href="#" class="continue-reading">Continue Reading</a>
+              </div>
+            </article>
+            <article class="article">
+              <div class="article-image-container">
+                <img src="images/u10.jpg" alt="asdsad" />
+                <div class="image-overlay">
+                  <table>
+                    <tr>
+                      <th>Camera</th>
+                      <td>Ricoh GR III</td>
+                    </tr>
+                    <tr>
+                      <th>File</th>
+                      <td>R0012043.DNG</td>
+                    </tr>
+                    <tr>
+                      <th>ISO</th>
+                      <td>Auto (max 3200)</td>
+                    </tr>
+                    <tr>
+                      <th>Lens</th>
+                      <td>28mm f/2.8</td>
+                    </tr>
+                    <tr>
+                      <th>Aperture</th>
+                      <td>f/4</td>
+                    </tr>
+                    <tr>
+                      <th>Shutter Speed</th>
+                      <td>1/400s</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="article-content">
+                <h2>Streets in Monochrome</h2>
+                <p class="article-meta">By Julia Ono | Dec 31, 2023 | Street</p>
+                <p>
+                  Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                  reiciendis voluptatibus maiores alias consequatur aut
+                  perferendis doloribus.
+                </p>
+                <a href="#" class="continue-reading">Continue Reading</a>
+              </div>
+            </article>
+            <article class="article">
+              <div class="article-image-container">
+                <img src="images/u11.jpg" alt="qwewqe" />
+                <div class="image-overlay">
+                  <table>
+                    <tr>
+                      <th>Camera</th>
+                      <td>Canon 5D Mark IV</td>
+                    </tr>
+                    <tr>
+                      <th>File</th>
+                      <td>IMG_4456.CR2</td>
+                    </tr>
+                    <tr>
+                      <th>ISO</th>
+                      <td>100</td>
+                    </tr>
+                    <tr>
+                      <th>Lens</th>
+                      <td>TS-E 24mm f/3.5L II</td>
+                    </tr>
+                    <tr>
+                      <th>Aperture</th>
+                      <td>f/11</td>
+                    </tr>
+                    <tr>
+                      <th>Shutter Speed</th>
+                      <td>1/60s</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="article-content">
+                <h2>Endless Desert Sands</h2>
+                <p class="article-meta">
+                  By Ken Watanabe | Jan 07, 2024 | Adventure
+                </p>
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem aperiam, eaque
+                  ipsa quae.
+                </p>
+                <a href="#" class="continue-reading">Continue Reading</a>
+              </div>
+            </article>
+            <article class="article">
+              <div class="article-image-container">
+                <img src="images/u12.jpg" alt="gfsgsd" />
+                <div class="image-overlay">
+                  <table>
+                    <tr>
+                      <th>Camera</th>
+                      <td>Nikon D850</td>
+                    </tr>
+                    <tr>
+                      <th>File</th>
+                      <td>DSC_9033.NEF</td>
+                    </tr>
+                    <tr>
+                      <th>ISO</th>
+                      <td>200</td>
+                    </tr>
+                    <tr>
+                      <th>Lens</th>
+                      <td>14-24mm f/2.8</td>
+                    </tr>
+                    <tr>
+                      <th>Aperture</th>
+                      <td>f/2.8</td>
+                    </tr>
+                    <tr>
+                      <th>Shutter Speed</th>
+                      <td>1/2000s</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="article-content">
+                <h2>Speed and Design</h2>
+                <p class="article-meta">
+                  By Laura Miller | Jan 14, 2024 | Automotive
+                </p>
+                <p>
+                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+                  odit aut fugit, sed quia consequuntur magni dolores eos qui.
+                </p>
+                <a href="#" class="continue-reading">Continue Reading</a>
+              </div>
+            </article>
+            <article class="article">
+              <div class="article-image-container">
+                <img src="images/u13.jpg" alt="asasdsad" />
+                <div class="image-overlay">
+                  <table>
+                    <tr>
+                      <th>Camera</th>
+                      <td>Sony A7 IV</td>
+                    </tr>
+                    <tr>
+                      <th>File</th>
+                      <td>DSC04817.ARW</td>
+                    </tr>
+                    <tr>
+                      <th>ISO</th>
+                      <td>125</td>
+                    </tr>
+                    <tr>
+                      <th>Lens</th>
+                      <td>FE 35mm f/1.4 GM</td>
+                    </tr>
+                    <tr>
+                      <th>Aperture</th>
+                      <td>f/2.8</td>
+                    </tr>
+                    <tr>
+                      <th>Shutter Speed</th>
+                      <td>1/320s</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="article-content">
+                <h2>Night Life Shines</h2>
+                <p class="article-meta">
+                  By Mike Johnson | Jan 21, 2024 | Nightlife
+                </p>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet, consectetur, adipisci velit, sed quia non numquam eius.
+                </p>
+                <a href="#" class="continue-reading">Continue Reading</a>
+              </div>
+            </article>
+            <article class="article">
+              <div class="article-image-container">
+                <img src="images/u14.jpg" alt="asdasds" />
+                <div class="image-overlay">
+                  <table>
+                    <tr>
+                      <th>Camera</th>
+                      <td>Ricoh GR III</td>
+                    </tr>
+                    <tr>
+                      <th>File</th>
+                      <td>R0012043.DNG</td>
+                    </tr>
+                    <tr>
+                      <th>ISO</th>
+                      <td>Auto (max 3200)</td>
+                    </tr>
+                    <tr>
+                      <th>Lens</th>
+                      <td>28mm f/2.8</td>
+                    </tr>
+                    <tr>
+                      <th>Aperture</th>
+                      <td>f/4</td>
+                    </tr>
+                    <tr>
+                      <th>Shutter Speed</th>
+                      <td>1/400s</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="article-content">
+                <h2>Concrete Minimalist Forms</h2>
+                <p class="article-meta">
+                  By Nora Ephron | Jan 28, 2024 | Minimalist
+                </p>
+                <p>
+                  Voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                  dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                  velit, sed quia.
+                </p>
+                <a href="#" class="continue-reading">Continue Reading</a>
+              </div>
+            </article>
+          </div>
+          <!-- end article-grid -->
+        </div>
+
+        <footer class="site-footer">
+          <p>Site by Anmol Singh, (24 June 2025)</p>
+          <p>ID: 100425080</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
