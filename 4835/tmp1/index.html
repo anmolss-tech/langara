@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mass Production</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="page-body">
+    <header id="main-header">
+      <div id="masthead-core">
+        <h1 id="site-title">Mass Production</h1>
+        <nav id="main-nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="fas fa-user-md nav-icon"></span>
+                <p class="nav-text">Doctors</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="fas fa-user-nurse nav-icon"></span>
+                <p class="nav-text">Nurses</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="fas fa-head-side-cough nav-icon"></span>
+                <p class="nav-text">Patients</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="fas fa-user-tie nav-icon"></span>
+                <p class="nav-text">Managers</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button id="reset-view-trigger" onclick="resetAllViews()">
+          clear info
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="vaccination-section">
+        <div id="section-heading">
+          <h2 class="section-title-text">Mass Vaccination</h2>
+          <span class="section-title-symbol">&#9764;</span>
+        </div>
+      </section>
+      <div id="dossier-grid">
+        <article class="dossier-item" id="dossier-1">
+          <div class="dossier-visage">
+            <img
+              src="images/kenya-aguirre.svg"
+              alt="kenya"
+              class="dossier-image"
+            />
+          </div>
+          <div class="dossier-controls">
+            <input
+              type="radio"
+              id="info-visible-1"
+              name="dossier-toggle-1"
+              data-type="view-toggle-show"
+            />
+            <label for="info-visible-1" class="control-label"
+              >info visible</label
+            >
+            <input
+              type="radio"
+              id="info-hidden-1"
+              name="dossier-toggle-1"
+              data-type="view-toggle-hide"
+              checked
+            />
+            <label for="info-hidden-1" class="control-label">info hidden</label>
+          </div>
+          <div class="dossier-intel">
+            <h3 class="intel-heading">
+              Lorem ipsum dolor sit amet, consectetur.
+            </h3>
+            <p class="intel-paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+              commodi, numquam eos.
+            </p>
+            <ul class="intel-list">
+              <li class="intel-list-item">Lorem ipsum.</li>
+              <li class="intel-list-item">Dolor sit.</li>
+              <li class="intel-list-item">Amet consectetur.</li>
+              <li class="intel-list-item">Adipisicing elit.</li>
+              <li class="intel-list-item">Earum, aut.</li>
+              <li class="intel-list-item">Ipsam, voluptatibus.</li>
+              <li class="intel-list-item">Quos, quae.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="dossier-item" id="dossier-2">
+          <div class="dossier-visage">
+            <img
+              src="images/kenya-aguirre.svg"
+              alt="kenya"
+              class="dossier-image"
+            />
+          </div>
+          <div class="dossier-controls">
+            <input
+              type="radio"
+              id="info-visible-2"
+              name="dossier-toggle-2"
+              data-type="view-toggle-show"
+            />
+            <label for="info-visible-2" class="control-label"
+              >intel visible</label
+            >
+            <input
+              type="radio"
+              id="info-hidden-2"
+              name="dossier-toggle-2"
+              data-type="view-toggle-hide"
+              checked
+            />
+            <label for="info-hidden-2" class="control-label"
+              >intel hidden</label
+            >
+          </div>
+          <div class="dossier-intel">
+            <h3 class="intel-heading">
+              Quisque urna urna, vehicula et turpis.
+            </h3>
+            <p class="intel-paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+              commodi, numquam eos.
+            </p>
+            <ul class="intel-list">
+              <li class="intel-list-item">Tenetur, quidem.</li>
+              <li class="intel-list-item">Quisquam, quod.</li>
+              <li class="intel-list-item">Necessitatibus, enim.</li>
+              <li class="intel-list-item">Repellat, veniam.</li>
+              <li class="intel-list-item">Mollitia, ipsam.</li>
+              <li class="intel-list-item">Harum, autem.</li>
+              <li class="intel-list-item">Fugit, cum.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="dossier-item" id="dossier-3">
+          <div class="dossier-visage">
+            <img
+              src="images/kenya-aguirre.svg"
+              alt="kenya"
+              class="dossier-image"
+            />
+          </div>
+          <div class="dossier-controls">
+            <input
+              type="radio"
+              id="info-visible-3"
+              name="dossier-toggle-3"
+              data-type="view-toggle-show"
+            />
+            <label for="info-visible-3" class="control-label"
+              >intel visible</label
+            >
+            <input
+              type="radio"
+              id="info-hidden-3"
+              name="dossier-toggle-3"
+              data-type="view-toggle-hide"
+              checked
+            />
+            <label for="info-hidden-3" class="control-label"
+              >intel hidden</label
+            >
+          </div>
+          <div class="dossier-intel">
+            <h3 class="intel-heading">Donec felis erat, volutpat a dolor.</h3>
+            <p class="intel-paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+              commodi, numquam eos.
+            </p>
+            <ul class="intel-list">
+              <li class="intel-list-item">Similique, est.</li>
+              <li class="intel-list-item">Placeat, cumque.</li>
+              <li class="intel-list-item">Nostrum, temporibus.</li>
+              <li class="intel-list-item">Dolorem, aut.</li>
+              <li class="intel-list-item">Fuga, debitis.</li>
+              <li class="intel-list-item">Dicta, consectetur?</li>
+              <li class="intel-list-item">Natus, voluptatem!</li>
+            </ul>
+          </div>
+        </article>
+        <article class="dossier-item" id="dossier-4">
+          <div class="dossier-visage">
+            <img
+              src="images/kenya-aguirre.svg"
+              alt="kenya"
+              class="dossier-image"
+            />
+          </div>
+          <div class="dossier-controls">
+            <input
+              type="radio"
+              id="info-visible-4"
+              name="dossier-toggle-4"
+              data-type="view-toggle-show"
+            />
+            <label for="info-visible-4" class="control-label"
+              >intel visible</label
+            >
+            <input
+              type="radio"
+              id="info-hidden-4"
+              name="dossier-toggle-4"
+              data-type="view-toggle-hide"
+              checked
+            />
+            <label for="info-hidden-4" class="control-label"
+              >intel hidden</label
+            >
+          </div>
+          <div class="dossier-intel">
+            <h3 class="intel-heading">Aenean eu leo quam pellentesque.</h3>
+            <p class="intel-paragraph">
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur
+              et. Donec sed odio dui.
+            </p>
+            <ul class="intel-list">
+              <li class="intel-list-item">Cras justo.</li>
+              <li class="intel-list-item">Odio dapibus.</li>
+              <li class="intel-list-item">Ac facilisis.</li>
+              <li class="intel-list-item">Inceptos himenaeos.</li>
+              <li class="intel-list-item">Morbi leo.</li>
+              <li class="intel-list-item">Risus, porta.</li>
+              <li class="intel-list-item">Ac consectetur.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="dossier-item" id="dossier-5">
+          <div class="dossier-visage">
+            <img
+              src="images/kenya-aguirre.svg"
+              alt="kenya"
+              class="dossier-image"
+            />
+          </div>
+          <div class="dossier-controls">
+            <input
+              type="radio"
+              id="info-visible-5"
+              name="dossier-toggle-5"
+              data-type="view-toggle-show"
+            />
+            <label for="info-visible-5" class="control-label"
+              >intel visible</label
+            >
+            <input
+              type="radio"
+              id="info-hidden-5"
+              name="dossier-toggle-5"
+              data-type="view-toggle-hide"
+              checked
+            />
+            <label for="info-hidden-5" class="control-label"
+              >intel hidden</label
+            >
+          </div>
+          <div class="dossier-intel">
+            <h3 class="intel-heading">
+              Vestibulum ante ipsum primis in faucibus.
+            </h3>
+            <p class="intel-paragraph">
+              Nullam quis risus eget urna mollis ornare vel eu leo. Fusce
+              dapibus, tellus ac cursus commodo.
+            </p>
+            <ul class="intel-list">
+              <li class="intel-list-item">Duis mollis.</li>
+              <li class="intel-list-item">Est non.</li>
+              <li class="intel-list-item">Commodo luctus.</li>
+              <li class="intel-list-item">Nisi erat.</li>
+              <li class="intel-list-item">Porttitor ligula.</li>
+              <li class="intel-list-item">Eget lacinia.</li>
+              <li class="intel-list-item">Odio sem.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer id="main-footer">
+      <div id="colophon-core">
+        <p id="creator-name">Jaskirat Singh</p>
+        <p id="creator-id">100436449</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
