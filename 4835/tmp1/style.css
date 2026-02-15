@@ -1,0 +1,275 @@
+:root {
+  --dark-bg: rgb(28, 28, 28);
+  --light-fg: rgb(255, 255, 255);
+  --accent-primary: rgb(255, 192, 203);
+  --card-bg: rgb(255, 228, 196);
+}
+
+.page-body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--light-fg);
+  color: rgb(51, 51, 51);
+  line-height: 1.6;
+}
+
+#main-header {
+  background: var(--dark-bg);
+  color: var(--light-fg);
+  padding: clamp(0.5em, 2vw, 3em);
+  position: relative;
+}
+
+#main-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  background: radial-gradient(
+    circle,
+    rgb(0, 0, 0) 0%,
+    rgb(17, 17, 17) 20%,
+    rgb(34, 34, 34) 40%,
+    rgb(51, 51, 51) 60%,
+    rgb(68, 68, 68) 80%,
+    var(--dark-bg) 100%
+  );
+  z-index: 0;
+}
+
+#masthead-core {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+#site-title {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin: 0;
+}
+
+#main-nav .nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+#main-nav .nav-item {
+  margin: 0 0.8em;
+  text-align: center;
+}
+
+#main-nav .nav-link {
+  color: var(--light-fg);
+  text-decoration: none;
+  display: block;
+  padding: 0.5em 0;
+  transition: color 0.3s;
+}
+
+#main-nav .nav-item:nth-child(even) .nav-link:hover .nav-text {
+  color: rgb(135, 206, 235);
+}
+
+#main-nav .nav-item:nth-child(even) .nav-link:hover .nav-icon {
+  color: rgb(173, 216, 230);
+}
+
+#main-nav .nav-link:hover .nav-text {
+  color: rgb(255, 105, 180);
+}
+
+#main-nav .nav-link:hover .nav-icon {
+  color: var(--accent-primary);
+}
+
+#main-nav .nav-icon {
+  margin-right: 0.3em;
+  color: rgb(204, 204, 204);
+  transition: color 0.3s;
+}
+
+#reset-view-trigger {
+  background-color: rgb(85, 85, 85);
+  color: var(--light-fg);
+  border: 2px solid rgb(136, 136, 136);
+  padding: 0.4em 0.8em;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+#reset-view-trigger:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+#main-content {
+  max-width: 1200px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+#section-heading {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#dossier-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2em;
+}
+
+.dossier-item {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.dossier-item:hover {
+  transform: translateY(-5px);
+}
+
+.dossier-item:nth-child(odd) {
+  background-color: rgb(255, 235, 205);
+}
+
+.dossier-visage .dossier-image {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.dossier-controls {
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.dossier-controls .control-label {
+  margin-right: 0.8em;
+  cursor: pointer;
+  transition: color 0.3s;
+  font-size: 0.9em;
+}
+
+.dossier-controls .control-label:hover {
+  color: rgb(255, 20, 147);
+}
+
+.dossier-controls input[type="radio"] {
+  margin-right: 0.2em;
+  accent-color: var(--accent-primary);
+}
+
+.dossier-item:has([data-type="view-toggle-show"]:checked) .dossier-intel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dossier-item:has([data-type="view-toggle-show"]:checked) .control-label {
+  color: var(--light-fg);
+}
+.dossier-intel {
+  position: absolute;
+  height: 90%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: var(--light-fg);
+  padding: 1em;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
+  z-index: 1; /* Ensure intel panel is below the controls */
+}
+
+.dossier-intel .intel-heading {
+  margin-top: 0;
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+.dossier-intel .intel-paragraph {
+  font-size: 0.9em;
+  margin-bottom: 0.7em;
+}
+.intel-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.intel-list-item {
+  border: 1px solid var(--light-fg);
+}
+.dossier-intel .intel-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dossier-intel .intel-list-item {
+  font-size: 0.85em;
+  margin-bottom: 0.4em;
+}
+
+#main-footer {
+  background: var(--dark-bg);
+  color: var(--light-fg);
+  padding: clamp(1.5em, 5vw, 5em);
+  text-align: start;
+  position: relative;
+  overflow: hidden;
+}
+
+#main-footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  background: radial-gradient(
+    circle,
+    rgb(0, 0, 0) 0%,
+    rgb(17, 17, 17) 20%,
+    rgb(34, 34, 34) 40%,
+    rgb(51, 51, 51) 60%,
+    rgb(68, 68, 68) 80%,
+    var(--dark-bg) 100%
+  );
+  z-index: 0;
+}
+
+#colophon-core {
+  position: relative;
+  z-index: 1;
+}
+
+#creator-name,
+#creator-id {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  margin: 0.3em 0;
+}
