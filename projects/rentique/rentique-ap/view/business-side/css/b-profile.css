@@ -1,0 +1,273 @@
+/*
+  @Made By: 
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #06324f;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#header-placeholder {
+  background-color: #fff !important;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  background-color: #fff;
+  width: 100%;
+}
+
+.brand-profile {
+  display: grid;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto; 
+  grid-template-columns: 1fr 320px;
+  grid-template-areas:
+    "title title"
+    "form image"
+    "button image";
+  gap: 30px 50px;
+  align-items: start;
+}
+
+.brand-form {
+  display: contents;
+}
+
+.brand-form h2 {
+  grid-area: title;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #06324f;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+}
+
+
+.brand-form__fields {
+  grid-area: form;
+}
+
+.brand-profile__image-upload {
+  grid-area: image;
+  width: 320px; 
+  height: 320px;
+  background-color: #f5f5f5;
+  border: 1px solid #c3c1c1;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: #06324f;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.brand-profile__image-upload:hover {
+  background-color: #e8f3ec;
+}
+
+.brand-profile__image-upload img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.save-btn {
+  grid-area: button;
+  width: 100%;
+  max-width: 600px;
+  background-color: #06324f;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.save-btn:hover:not(:disabled) {
+  background-color: #0b4b77;
+}
+
+.save-btn:disabled {
+  background-color: #d6d6d6;
+  color: #b0b0b0;
+  cursor: not-allowed;
+}
+
+.brand-form label {
+  display: block;
+  font-size: 13px;
+  color: #06324f;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.brand-form input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #c3c1c1;
+  padding: 12px 0;
+  margin-bottom: 28px;
+  font-size: 16px;
+  color: #06324f;
+  background: transparent;
+}
+
+.brand-form input::placeholder {
+  color: #9fa3a6;
+  font-size: 15px;
+}
+
+.brand-form input:focus {
+  outline: none;
+  border-color: #06324f;
+}
+
+.setting-options,
+.change-password-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 360px;
+}
+
+.setting-options a,
+.change-password-sidebar a {
+  display: block;
+  padding: 10px 14px;
+  border: 1px solid #c3c1c1;
+  background-color: #fff;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #06324f;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.setting-options a:hover,
+.change-password-sidebar a:hover {
+  background-color: #cce7d1;
+  border-color: #06324f;
+}
+
+.change-password-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 80px;
+  max-width: 1200px;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.change-password-form {
+  flex: 2;
+  max-width: 620px;
+  background-color: #f5fef9;
+  border: 1px solid #06324f;
+  border-radius: 4px;
+  padding: 90px 100px 90px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.change-password-form label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.change-password-form input {
+  padding: 10px 0;
+  margin-bottom: 25px;
+}
+.change-password-form .save-btn {
+  width: 60%;
+  margin: 20px auto 0;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 40px 15px;
+  }
+
+  .brand-profile {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "form"
+      "button";
+    gap: 25px; 
+    max-width: 100%;
+    justify-items: center;
+  }
+
+  .brand-form h2 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 0; 
+  }
+
+  .brand-form__fields {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .brand-profile__image-upload {
+    width: 260px; 
+    height: 260px;
+  }
+
+  .save-btn {
+    width: 100%;
+    max-width: 100%;
+    justify-self: stretch;
+  }
+
+  .setting-options,
+  .change-password-sidebar,
+  .change-password-form {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  .change-password-container {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  .change-password-form {
+    padding: 40px 20px;
+  }
+  .change-password-form .save-btn {
+    width: 100%;
+  }
+}
