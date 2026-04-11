@@ -1,0 +1,344 @@
+/*
+  @Made By:
+*/
+
+
+.chat-page-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: transparent;
+  border-bottom: none;
+  flex-shrink: 0;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  gap: 2rem;
+  width: 100%;
+  max-width: 100%;
+  
+}
+
+.chat-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-left: 25%;
+  flex: 0 1 auto;
+  min-width: 0;
+  padding-top: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #9ca3af;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap; 
+  flex-shrink: 0;
+}
+
+.nav-link:hover {
+  color: #1e3a5f;
+}
+
+.nav-link.active {
+  color: #1e3a5f;
+  border-bottom-color: #1e3a5f;
+}
+
+.chat-header-right {
+  display: flex;
+  align-items: center;
+  position: static; 
+  flex: 0 0 auto; 
+  margin-left: auto; 
+}
+
+.user-menu {
+  position: relative;
+  z-index: 10;
+}
+
+.user-menu__trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e3a5f;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap; 
+  max-width: 200px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  min-width: 80px;
+}
+
+.user-menu__trigger:hover {
+  background-color: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
+.user-menu__chevron {
+  transition: transform 0.3s ease;
+  fill: currentColor;
+}
+
+.user-menu__trigger[aria-expanded="true"] .user-menu__chevron {
+  transform: rotate(180deg);
+}
+
+.user-menu__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 100;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.user-menu__trigger[aria-expanded="true"] + .user-menu__dropdown,
+.user-menu__dropdown:not([hidden]) {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  display: flex;
+}
+
+.user-menu__dropdown a {
+  padding: 10px 12px;
+  text-decoration: none;
+  color: #6b7280;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 500;
+  text-align: left;
+}
+
+.user-menu__dropdown a:hover {
+  background-color: #f3f4f6;
+  color: #1e3a5f;
+}
+
+.user-menu__dropdown a[data-link-type="logout"] {
+  color: #e57373;
+}
+
+.user-menu__dropdown a[data-link-type="logout"]:hover {
+  color: white;
+  background-color: #e57373;
+}
+
+.user-greeting {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e3a5f;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  max-width: 180px; 
+  flex-shrink: 1;
+}
+
+
+.mobile-header-icons {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .chat-page-header {
+    padding: 1.25rem 1rem;
+    gap: 1rem;
+  }
+
+  .chat-header-nav {
+    gap: 1.5rem;
+    margin-left: 15%;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+
+  .user-greeting {
+    max-width: 140px;
+    font-size: 15px;
+  }
+
+  .user-menu__trigger {
+    max-width: 160px;
+    font-size: 15px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .chat-page-header {
+    padding: 1.25rem 1.5rem;
+    gap: 1.5rem; 
+  }
+
+  .chat-header-nav {
+    gap: 1.5rem;
+    margin-left: 10%;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+
+  .user-greeting {
+    font-size: 18px;
+    max-width: 150px; 
+  }
+
+  .user-menu__trigger {
+    font-size: 15px;
+    max-width: 170px;
+  }
+
+  .chat-header-right {
+    right: 1.5rem;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .chat-header-nav {
+    gap: 1.25rem;
+    margin-left: 2%;
+  }
+
+  .nav-link {
+    font-size: 15px;
+  }
+
+  .user-greeting {
+    max-width: 120px;
+    font-size: 14px;
+  }
+
+  .user-menu__trigger {
+    max-width: 140px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-page-header {
+    display: none;
+  }
+
+  .mobile-header-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .mobile-header-icons .icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .mobile-header-icons .search {
+    flex-shrink: 0;
+  }
+
+  .mobile-header-icons .logo-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .mobile-header-icons .right-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .mobile-profile-pic {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    cursor: pointer;
+  }
+ 
+  .user-icon-menu {
+    position: relative;
+  }
+
+  .user-icon-menu__dropdown {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    min-width: 140px;
+    padding: 8px 0;
+    display: none;
+    z-index: 20;
+  }
+
+  .user-icon-menu:hover .user-icon-menu__dropdown,
+  .user-icon-menu__dropdown:hover {
+    display: block;
+  }
+
+  .user-icon-menu__dropdown a {
+    display: block;
+    padding: 10px 14px;
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  .user-icon-menu__dropdown a:hover {
+    background-color: #f3f4f6;
+    color: #1e3a5f;
+  }
+
+  .user-icon-menu__dropdown a[data-link-type="logout"] {
+    color: #e57373;
+  }
+
+  .user-icon-menu__dropdown a[data-link-type="logout"]:hover {
+    color: #fff;
+    background-color: #e57373;
+  }
+}
