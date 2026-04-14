@@ -1,0 +1,125 @@
+<!-- @Made By: Gurpreet Singh -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rentique - Business Sign Up</title>
+  <meta name="theme-color" content="#06324f">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/logos/rentique-sub.png">
+
+  <link rel="stylesheet" href="../css/auth-common.css">
+  <link rel="stylesheet" href="../css/auth-signup.css">
+  <link rel="stylesheet" href="../css/auth-signup-business.css">
+  <link rel="stylesheet" href="../../components/css/var.css" />
+  <link rel="stylesheet" href="../../components/css/modal.css" />
+  <script src="../../../controller/components/modal.js" type="module" defer></script>
+  <script src="../../../controller/business-side/auth-signup-business.js" type="module" defer></script>
+  <link rel="stylesheet" href="/view/components/css/autopopulate-button.css" />
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="logo-section">
+        <a href="auth-signup-choice.html" class="back-arrow"></a>
+        <img src="/assets/logos/rentique-main.png" alt="Rentique logo" class="logo">
+        <!-- <h1>RENTIQUE</h1> -->
+      </div>
+
+      <form class="login-form" id="signupBusinessForm">
+        <h2>SIGN UP</h2>
+        
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Email" required>
+          <span class="error-message" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <input type="password" id="password" placeholder="Password" required>
+          <span class="error-message" id="passwordError"></span>
+        </div>
+
+        <div class="policy-checkbox">
+          <input type="checkbox" id="policyAccept" required>
+          <label for="policyAccept">
+            I accept the <a href="#" class="policy-link">Policy Statement</a>
+          </label>
+        </div>
+
+        <button type="submit" class="login-btn">CREATE ACCOUNT</button>
+
+        <p class="signup-text">
+          Already have an account? <a href="auth-login-business.html">Log In</a>
+        </p>
+
+        <p class="customer-link">
+          Sign in as <a href="auth-login-business.html">Business</a>
+        </p>
+      </form>
+    </div>
+
+    <div class="right">
+      <img src="https://rxt7sochug9y6jiw.public.blob.vercel-storage.com/home.png" alt="Fashion Model" class="hero-img">
+    </div>
+  </div>
+
+  
+  <div id="brandInfoModal" class="onboarding-modal" style="display: none;">
+   
+    <div class="onboarding-header">
+      <button class="back-arrow" type="button" onclick="history.back()">
+      </button>
+      <img src="/assets/logos/rentique-main.png" alt="Rentique logo" class="logo">
+    </div>
+
+   
+    <div class="onboarding-content">
+      <div class="content-wrapper">
+       
+        <div class="form-column">
+          <h2>BRAND INFORMATION</h2>
+          
+          <div class="form-group">
+            <input type="text" id="brandName" placeholder="Brand name" required>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="brandAddress" placeholder="Address" required>
+          </div>
+        </div>
+
+        
+        <div class="photo-column">
+          <input type="file" id="brandLogo" accept="image/*" style="display: none;">
+          <label for="brandLogo" class="photo-upload-area">
+            <div class="photo-placeholder" id="photoPlaceholder">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </div>
+            <img id="brandLogoPreview" style="display: none;" alt="Brand logo preview">
+          </label>
+          <button type="button" class="remove-image-btn" id="removeBrandLogo" style="display: none;">×</button>
+        </div>
+      </div>
+      <button id="completeBrandInfo" class="done-btn" type="button" disabled>DONE</button>
+    </div>
+  </div>
+
+  <div id="modalContainer"></div>
+  <!-- Auto-populate Button  -->
+  <button id="dev-autopopulate-btn" class="dev-autopopulate-btn" title="Auto-populate form for demo">
+      <span class="dev-autopopulate-icon">✨</span>
+  </button>
+
+  <script type="module">
+      import { initializeAutopopulate } from '../../../controller/components/autopopulate.js';
+      document.addEventListener('DOMContentLoaded', initializeAutopopulate);
+  </script>
+</body>
+
+</html>
