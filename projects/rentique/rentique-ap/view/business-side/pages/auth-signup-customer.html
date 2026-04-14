@@ -1,0 +1,232 @@
+<!-- @Made By: Gurpreet Singh -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rentique - Customer Sign Up</title>
+  <meta name="theme-color" content="#06324f">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/logos/rentique-sub.png">
+
+  <link rel="stylesheet" href="../css/auth-common.css">
+  <link rel="stylesheet" href="../css/auth-signup.css">
+  <link rel="stylesheet" href="../css/auth-signup-customer.css">
+  <link rel="stylesheet" href="../../components/css/var.css" />
+  <link rel="stylesheet" href="../../components/css/modal.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="stylesheet" href="/view/components/css/autopopulate-button.css" />
+
+
+  <script src="../../../controller/components/modal.js"  type = "module" defer></script>
+  <script src="../../../controller/business-side/auth-signup-customer.js" type="module" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="logo-section">
+        <a href="auth-signup-choice.html" class="back-arrow" onclick="history.back()"></a>
+        <img src="/assets/logos/rentique-main.png" alt="Rentique logo" class="logo">
+        <!-- <h1>RENTIQUE</h1> -->
+      </div>
+
+      <form class="login-form" id="signupForm">
+        <h2>SIGN UP</h2>
+        
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Email" required>
+          <span class="error-message" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <input type="password" id="password" placeholder="Password" required>
+          <span class="error-message" id="passwordError"></span>
+        </div>
+
+        <span class="error-message" id="generalError"></span>
+
+        <div class="policy-checkbox">
+          <input type="checkbox" id="policyAccept" required>
+          <label for="policyAccept">
+            I accept the <a href="#" class="policy-link">Policy Statement</a>
+          </label>
+        </div>
+
+        <button type="submit" class="login-btn">CREATE ACCOUNT</button>
+
+        <p class="signup-text">
+          Already have an account? <a href="auth-login-customer.html">Log In</a>
+        </p>
+      </form>
+    </div>
+
+    <div class="right">
+      <img src="https://rxt7sochug9y6jiw.public.blob.vercel-storage.com/home.png" alt="Fashion Model" class="hero-img">
+    </div>
+  </div>
+  
+  <div id="userProfileModal" class="onboarding-modal" style="display: none;">
+    <div class="onboarding-header">
+      <a href="auth-signup-choice.html" class="back-arrow" onclick="history.back()"></a>
+      <img src="/assets/logos/rentique-main.png" alt="Rentique logo" class="logo">
+      <h1>RENTIQUE</h1>
+    </div>
+    <div class="onboarding-content">
+      <div class="content-wrapper">
+        <div class="form-column">
+          <h2>SIGN UP</h2>
+          <div class="form-group">
+            <input type="text" id="username" placeholder="Username" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="address" placeholder="Address" required>
+          </div>
+        </div>
+
+        <div class="photo-column">
+          <input type="file" id="profilePhoto" accept="image/*" style="display: none;">
+          
+          <label for="profilePhoto" class="photo-upload-area">
+            <div class="photo-placeholder photo-placeholder-plus" id="photoPlaceholder1"></div>
+            <img id="profilePreview" style="display: none;">
+            <button type="button" id="removeProfilePhotoBtn" class="remove-image-btn" style="display: none;">&times;</button>
+          </label>
+
+          <button type="button" id="cameraButton" class="photo-upload-area camera-upload">
+            <div class="photo-placeholder">
+              <i class="bx bx-camera"></i>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <button id="continueToQuestionnaire" class="login-btn" disabled>Continue</button>
+    </div>
+  </div>
+  
+  <div id="cameraModal" class="modal-overlay">
+      <div class="modal-container">
+          <h2 class="modal-title">Take a Photo</h2>
+          <video id="cameraFeed" autoplay playsinline></video>
+          <canvas id="cameraCanvas" style="display: none;"></canvas>
+          <div class="modal-buttons">
+              <button type="button" id="captureButton" class="modal-btn modal-btn--primary">Capture</button>
+              <button type="button" id="cancelCameraButton" class="modal-btn modal-btn--secondary">Cancel</button>
+          </div>
+      </div>
+  </div>
+  
+  <div id="questionnaireModal" class="onboarding-modal" style="display: none;">
+    <div class="onboarding-header">
+      <a href="#" class="back-arrow questionnaire-back-to-profile" onclick="history.back()"></a>
+      <img src="/assets/logos/rentique-main.png" alt="Rentique logo" class="logo">
+      <!-- <h1>RENTIQUE</h1> -->
+    </div>
+    <div class="onboarding-content">
+      <div class="progress-indicator">
+        <div class="progress-step active" data-step="1"></div>
+        <div class="progress-step" data-step="2"></div>
+        <div class="progress-step" data-step="3"></div>
+        <div class="progress-step" data-step="4"></div>
+      </div>
+      <h2>QUESTIONNAIRE</h2>
+
+      <div class="questionnaire-step" data-step="1">
+        <h3>Personal Measurements</h3>
+        <div class="measurement-group">
+          <div class="measurement-input">
+            <input type="number" id="height" placeholder="Height"><span class="unit">cm</span>
+          </div>
+          <div class="measurement-input">
+            <input type="number" id="weight" placeholder="Weight"><span class="unit">kg</span>
+          </div>
+        </div>
+        <h3>Gender</h3>
+        <div class="gender-options">
+          <label class="gender-option"><input type="radio" name="gender" value="Female"><span>Female</span></label>
+          <label class="gender-option"><input type="radio" name="gender" value="Male"><span>Male</span></label>
+          <label class="gender-option"><input type="radio" name="gender" value="Other"><span>Other</span></label>
+        </div>
+        <button type="button" class="login-btn questionnaire-continue">Continue</button>
+        <button type="button" class="secondary-btn questionnaire-back-to-profile" onclick="history.back()">SKIP</button>
+      </div>
+      
+      <div class="questionnaire-step" data-step="2" style="display: none;">
+        <h3>Which is your preferred colour?</h3>
+        <div class="color-options">
+          <input type="checkbox" id="color-black" name="favoriteColor" value="Black" class="color-input-hidden"><label for="color-black" class="color-label black"><span class="color-dot" style="background-color: #000000;"></span> Black</label>
+          <input type="checkbox" id="color-white" name="favoriteColor" value="White" class="color-input-hidden"><label for="color-white" class="color-label white"><span class="color-dot" style="background-color: #FFFFFF; border: 1px solid #ccc;"></span> White</label>
+          <input type="checkbox" id="color-grey" name="favoriteColor" value="Grey" class="color-input-hidden"><label for="color-grey" class="color-label grey"><span class="color-dot" style="background-color: #808080;"></span> Grey</label>
+          <input type="checkbox" id="color-beige" name="favoriteColor" value="Beige" class="color-input-hidden"><label for="color-beige" class="color-label beige"><span class="color-dot" style="background-color: #F5F5DC;"></span> Beige</label>
+          <input type="checkbox" id="color-brown" name="favoriteColor" value="Brown" class="color-input-hidden"><label for="color-brown" class="color-label brown"><span class="color-dot" style="background-color: #8B4513;"></span> Brown</label>
+          <input type="checkbox" id="color-navy" name="favoriteColor" value="Navy" class="color-input-hidden"><label for="color-navy" class="color-label navy"><span class="color-dot" style="background-color: #000080;"></span> Navy</label>
+          <input type="checkbox" id="color-red" name="favoriteColor" value="Red" class="color-input-hidden"><label for="color-red" class="color-label red"><span class="color-dot" style="background-color: #FF0000;"></span> Red</label>
+          <input type="checkbox" id="color-pink" name="favoriteColor" value="Pink" class="color-input-hidden"><label for="color-pink" class="color-label pink"><span class="color-dot" style="background-color: #FFC0CB;"></span> Pink</label>
+          <input type="checkbox" id="color-orange" name="favoriteColor" value="Orange" class="color-input-hidden"><label for="color-orange" class="color-label orange"><span class="color-dot" style="background-color: #FFA500;"></span> Orange</label>
+          <input type="checkbox" id="color-yellow" name="favoriteColor" value="Yellow" class="color-input-hidden"><label for="color-yellow" class="color-label yellow"><span class="color-dot" style="background-color: #FFFF00;"></span> Yellow</label>
+          <input type="checkbox" id="color-green" name="favoriteColor" value="Green" class="color-input-hidden"><label for="color-green" class="color-label green"><span class="color-dot" style="background-color: #008000;"></span> Green</label>
+          <input type="checkbox" id="color-blue" name="favoriteColor" value="Blue" class="color-input-hidden"><label for="color-blue" class="color-label blue"><span class="color-dot" style="background-color: #0000FF;"></span> Blue</label>
+          <input type="checkbox" id="color-purple" name="favoriteColor" value="Purple" class="color-input-hidden"><label for="color-purple" class="color-label purple"><span class="color-dot" style="background-color: #800080;"></span> Purple</label>
+        </div>
+        <button type="button" class="login-btn questionnaire-continue">Continue</button>
+        <button type="button" class="secondary-btn questionnaire-back">SKIP</button>
+      </div>
+
+      <div class="questionnaire-step" data-step="3" style="display: none;">
+        <h3>What is Your Favorite Style?</h3>
+        <div class="style-options">
+          <input type="checkbox" id="style-casual" name="favoriteStyle" value="Casual" class="color-input-hidden"><label for="style-casual" class="style-option"><span>Casual</span></label>
+          <input type="checkbox" id="style-formal" name="favoriteStyle" value="Formal" class="color-input-hidden"><label for="style-formal" class="style-option"><span>Formal</span></label>
+          <input type="checkbox" id="style-business" name="favoriteStyle" value="Business" class="color-input-hidden"><label for="style-business" class="style-option"><span>Business</span></label>
+          <input type="checkbox" id="style-party" name="favoriteStyle" value="Party" class="color-input-hidden"><label for="style-party" class="style-option"><span>Party</span></label>
+          <input type="checkbox" id="style-dressy" name="favoriteStyle" value="Dressy" class="color-input-hidden"><label for="style-dressy" class="style-option"><span>Dressy</span></label>
+          <input type="checkbox" id="style-vintage" name="favoriteStyle" value="Vintage" class="color-input-hidden"><label for="style-vintage" class="style-option"><span>Vintage</span></label>
+          <input type="checkbox" id="style-street" name="favoriteStyle" value="Street Style" class="color-input-hidden"><label for="style-street" class="style-option"><span>Street Style</span></label>
+          <input type="checkbox" id="style-minimalist" name="favoriteStyle" value="Minimalist" class="color-input-hidden"><label for="style-minimalist" class="style-option"><span>Minimalist</span></label>
+          <input type="checkbox" id="style-sporty" name="favoriteStyle" value="Sporty" class="color-input-hidden"><label for="style-sporty" class="style-option"><span>Sporty</span></label>
+          <input type="checkbox" id="style-elegant" name="favoriteStyle" value="Elegant" class="color-input-hidden"><label for="style-elegant" class="style-option"><span>Elegant</span></label>
+          <input type="checkbox" id="style-preppy" name="favoriteStyle" value="Preppy" class="color-input-hidden"><label for="style-preppy" class="style-option"><span>Preppy</span></label>
+          <input type="checkbox" id="style-y2k" name="favoriteStyle" value="Y2K" class="color-input-hidden"><label for="style-y2k" class="style-option"><span>Y2K</span></label>
+        </div>
+        <button type="button" class="login-btn questionnaire-continue">Continue</button>
+        <button type="button" class="secondary-btn questionnaire-back">SKIP</button>
+      </div>
+
+      <div class="questionnaire-step" data-step="4" style="display: none;">
+        <h3>What style of clothes do you want to try?</h3>
+        <div class="style-options">
+          <input type="checkbox" id="try-casual" name="styleToTry" value="Casual" class="color-input-hidden"><label for="try-casual" class="style-option"><span>Casual</span></label>
+          <input type="checkbox" id="try-formal" name="styleToTry" value="Formal" class="color-input-hidden"><label for="try-formal" class="style-option"><span>Formal</span></label>
+          <input type="checkbox" id="try-business" name="styleToTry" value="Business" class="color-input-hidden"><label for="try-business" class="style-option"><span>Business</span></label>
+          <input type="checkbox" id="try-party" name="styleToTry" value="Party" class="color-input-hidden"><label for="try-party" class="style-option"><span>Party</span></label>
+          <input type="checkbox" id="try-dressy" name="styleToTry" value="Dressy" class="color-input-hidden"><label for="try-dressy" class="style-option"><span>Dressy</span></label>
+          <input type="checkbox" id="try-vintage" name="styleToTry" value="Vintage" class="color-input-hidden"><label for="try-vintage" class="style-option"><span>Vintage</span></label>
+          <input type="checkbox" id="try-street" name="styleToTry" value="Street Style" class="color-input-hidden"><label for="try-street" class="style-option"><span>Street Style</span></label>
+          <input type="checkbox" id="try-minimalist" name="styleToTry" value="Minimalist" class="color-input-hidden"><label for="try-minimalist" class="style-option"><span>Minimalist</span></label>
+          <input type="checkbox" id="try-sporty" name="styleToTry" value="Sporty" class="color-input-hidden"><label for="try-sporty" class="style-option"><span>Sporty</span></label>
+          <input type="checkbox" id="try-elegant" name="styleToTry" value="Elegant" class="color-input-hidden"><label for="try-elegant" class="style-option"><span>Elegant</span></label>
+          <input type="checkbox" id="try-preppy" name="styleToTry" value="Preppy" class="color-input-hidden"><label for="try-preppy" class="style-option"><span>Preppy</span></label>
+          <input type="checkbox" id="try-y2k" name="styleToTry" value="Y2K" class="color-input-hidden"><label for="try-y2k" class="style-option"><span>Y2K</span></label>
+        </div> 
+        <button type="button" class="login-btn questionnaire-done">DONE</button>
+        <button type="button" class="secondary-btn questionnaire-back">SKIP</button>
+      </div>
+      
+      <p class="settings-note">You can change this anytime from your profile settings.</p>
+    </div>
+  </div>
+   <div id="modalContainer"></div>
+    <!-- Auto-populate Button -->
+  <button id="dev-autopopulate-btn" class="dev-autopopulate-btn" title="Auto-populate form for demo">
+      <span class="dev-autopopulate-icon">✨</span>
+  </button>
+
+  <script type="module">
+      import { initializeAutopopulate } from '../../../controller/components/autopopulate.js';
+      document.addEventListener('DOMContentLoaded', initializeAutopopulate);
+  </script>
+</body>
+
+</html>
