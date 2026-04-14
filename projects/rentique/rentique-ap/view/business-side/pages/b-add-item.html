@@ -1,0 +1,413 @@
+<!-- @Made By: Gurpreet Singh -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item - Rentique</title>
+
+<meta name="theme-color" content="#06324f">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/logos/rentique-sub.png">
+
+    <link rel="stylesheet" href="../css/b-add-item.css">
+    <link rel="stylesheet" href="/view/components/css/var.css" />
+    <link rel="stylesheet" href="/view/components/css/header-footer.css" />
+    <script src="../../../controller/components/components.js" type="module" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="../../../controller/business-side/b-add-item.js" type="module" defer></script>
+    <link rel="stylesheet" href="/view/components/css/modal.css" />
+    <link rel="stylesheet" href="/view/components/css/autopopulate-button.css" />
+    <script src="../../../controller/components/modal.js"  type = "module" defer></script>
+</head>
+
+
+<body>
+    <div id="header-placeholder" data-user-type="business"></div>
+
+    <main class="b-add-main-container">
+        <div class="b-add-form-container">
+            <h1 class="b-add-form-container__title">ADD ITEM</h1>
+            <form id="bAddItemForm">
+
+                <section class="b-add-form-section">
+                    <label class="b-add-form-group__label">Upload Images</label>
+                    <div class="b-add-image-uploader" id="imageUploaderContainer">
+                        <button type="button" id="imageUploadButton" class="b-add-image-uploader__add-btn">+</button>
+                        <button type="button" id="cameraButton" class="b-add-image-uploader__add-btn">
+                            <i class='bx bx-camera'></i>
+                        </button>
+                        <input type="file" id="imageUploadInput" multiple accept="image/*" style="display: none;">
+                        <div id="imagePreviewContainer" class="b-add-image-uploader__preview-container"></div>
+                    </div>
+                </section>
+
+                <!-- Camera Modal -->
+                <div id="cameraModal" class="modal-overlay">
+                    <div class="modal-container">
+                        <h2 class="modal-title">Take a Photo</h2>
+                        <video id="cameraFeed" autoplay playsinline></video>
+                        <canvas id="cameraCanvas" style="display: none;"></canvas>
+                        <div class="modal-buttons">
+                            <button type="button" id="captureButton" class="modal-btn modal-btn--primary">Capture</button>
+                            <button type="button" id="cancelCameraButton" class="modal-btn modal-btn--secondary">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <section class="b-add-form-section">
+                    <div class="b-add-form-group">
+                        <label for="itemNameInput" class="b-add-form-group__label">Item name</label>
+                        <input type="text" id="itemNameInput" class="b-add-form-group__input"
+                            placeholder="Knitted Cardigan">
+                    </div>
+                    <div class="b-add-form-group">
+                        <label for="fullDescriptionInput" class="b-add-form-group__label">Description</label>
+                        <textarea id="fullDescriptionInput" class="b-add-form-group__textarea"
+                            placeholder="Women's V-Neck Cardigan" rows="3" required></textarea>
+                    </div>
+                    <div class="b-add-form-group">
+                        <label for="priceInput" class="b-add-form-group__label">Price</label>
+                        <div class="b-add-price-input">
+                            <span class="b-add-price-input__currency">$</span>
+                            <input type="number" id="priceInput" class="b-add-price-input__field" placeholder="10"
+                                step="0.01" onwheel="return false;" required>
+                        </div>
+                    </div>
+                </section>
+                
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Category <span
+                            class="b-add-form-group__label-icon">▲</span></legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="T-shirts" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">T-shirts</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Blouses & Shirts" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Blouses & Shirts</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Sweaters & Knits" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Sweaters & Knits</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Hoodies & Sweatshirts" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Hoodies & Sweatshirts</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Pants & Trousers" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Pants & Trousers</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category" value="Jeans"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Jeans</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category" value="Shorts"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Shorts</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category" value="Skirts"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Skirts</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category" value="Dresses"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Dresses</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Jumpsuits & Rompers" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Jumpsuits & Rompers</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Outerwear (Coats & Jackets)" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Outerwear (Coats & Jackets)</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Blazers & Vests" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Blazers & Vests</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category" value="Suits"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Suits</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Colour <span class="b-add-form-group__label-icon">▲</span>
+                    </legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Black" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--black"></span> Black</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="White" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--white"></span> White</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Grey" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--grey"></span> Grey</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Beige & Cream" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--beige"></span> Beige & Cream</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Brown" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--brown"></span> Brown</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Navy" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--navy"></span> Navy</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset" value="Red"
+                                class="b-add-tag-selector__input"><span class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--red"></span> Red</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Pink" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--pink"></span> Pink</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Orange" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--orange"></span> Orange</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Yellow" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--yellow"></span> Yellow</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Green" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--green"></span> Green</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Blue" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--blue"></span> Blue</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Purple" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--purple"></span> Purple</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Gender <span class="b-add-form-group__label-icon">▲</span>
+                    </legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="radio" name="gender" value="Women"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Women</span></label>
+                        <label class="b-add-tag-selector__option"><input type="radio" name="gender" value="Men"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Men</span></label>
+                        <label class="b-add-tag-selector__option"><input type="radio" name="gender" value="Unisex"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Unisex</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Size <span class="b-add-form-group__label-icon">▲</span>
+                    </legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="XXS"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">XXS</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="XS"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">XS</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="S"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">S</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="M"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">M</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="L"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">L</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="XL"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">XL</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="XXL"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">XXL</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Size Fit <span class="b-add-form-group__label-icon">▲</span></legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="true-to-size" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">True to size</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="runs-small" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Runs small</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="runs-large" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Runs large</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="slim-fit" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Slim fit</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="regular-fit" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Regular fit</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="loose-fit" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Loose fit</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="oversized" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Oversized</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="fitted" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Fitted</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="relaxed-fit" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Relaxed fit</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="boxy-fit" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Boxy fit</span></label>
+                    </div>
+                </fieldset>
+
+                <section class="b-add-form-section">
+                    <label class="b-add-form-group__label" for="measurementUploadButton">Size Chart (Optional)</label>
+                    <div class="b-add-size-chart-upload" id="sizeChartContent">
+                        <input type="file" id="measurementUploadInput" accept="image/*" style="display: none;">
+                        <button type="button" id="measurementUploadButton" class="b-add-size-chart-upload__btn">
+                            Upload Size Chart Image
+                        </button>
+                        <span id="measurementFileName" class="b-add-size-chart-upload__filename"></span>
+                    </div>
+                </section>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Texture <span class="b-add-form-group__label-icon">▲</span>
+                    </legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Smooth"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Smooth</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Soft"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Soft</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Textured"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Textured</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Rough"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Rough</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture"
+                                value="Sheer" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Sheer</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Matte"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Matte</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture"
+                                value="Shiny" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Shiny</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Knitted"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Knitted</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Stretchy"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Stretchy</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Suede-like"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Suede-like</span></label>
+                    </div>
+                </fieldset>
+                
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Season <span class="b-add-form-group__label-icon">▲</span></legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="season" value="Spring" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Spring</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="season" value="Summer" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Summer</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="season" value="Autumn" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Autumn</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="season" value="Winter" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Winter</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Style <span class="b-add-form-group__label-icon">▲</span>
+                    </legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Casual"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Casual</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Formal"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Formal</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style"
+                                value="Business & Professional" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Business & Professional</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style"
+                                value="Party & Evening" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Party & Evening</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Dressy"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Dressy</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style"
+                                value="Vintage & Retro" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Vintage & Retro</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style"
+                                value="Street Style" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Street Style</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Minimalist"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Minimalist</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style"
+                                value="Sporty" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Sporty</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Elegant"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Elegant</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Preppy"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Preppy</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Y2K"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Y2K</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Material <span
+                            class="b-add-form-group__label-icon">▲</span></legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material" value="Cotton"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Cotton</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material" value="Denim"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Denim</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material" value="Linen"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Linen</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material"
+                                value="Silk & Satin" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Silk & Satin</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material" value="Wool"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Wool</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material"
+                                value="Cashmere" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Cashmere</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material"
+                                value="Leather & Suede" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Leather & Suede</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material"
+                                value="Polyester" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Polyester</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material" value="Nylon"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Nylon</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material"
+                                value="Rayon & Viscose" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Rayon & Viscose</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material" value="Velvet"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Velvet</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material"
+                                value="Corduroy" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Corduroy</span></label>
+                    </div>
+                </fieldset>
+
+                <div class="b-add-action-buttons">
+                    <button type="button" class="b-add-action-buttons__btn b-add-action-buttons__btn--secondary">CANCEL</button>
+                    <button type="submit" class="b-add-action-buttons__btn b-add-action-buttons__btn--primary">ADD ITEM</button>                    
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <button id="scrollTopBtn" class="b-add-scroll-top">
+        <i class='bx bx-chevron-up'></i>
+    </button>
+    <div id="footer-placeholder" data-user-type="business"></div>
+
+    
+    <button id="dev-autopopulate-btn" class="dev-autopopulate-btn" title="Auto-populate form for demo">
+        <span class="dev-autopopulate-icon">✨</span>
+    </button>
+    <script type="module">
+        import { initializeAutopopulate } from '../../../controller/components/autopopulate.js';
+        document.addEventListener('DOMContentLoaded', initializeAutopopulate);
+    </script>
+</body>
+
+
+</html>
