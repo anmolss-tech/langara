@@ -1,0 +1,73 @@
+<!-- @Made By: Gurpreet Singh -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentique - Business Profile</title>
+
+<meta name="theme-color" content="#06324f">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/logos/rentique-sub.png">
+
+    <link rel="stylesheet" href="/view/business-side/css/b-home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css" />
+
+    <script src="../../../controller/business-side/b-home.js" type="module" defer></script>
+    <script src="../../../controller/components/components.js" type="module" defer></script>
+        
+    <link rel="stylesheet" href="/view/components/css/var.css" />
+    <link rel="stylesheet" href="/view/components/css/header-footer.css" />
+    <link rel="stylesheet" href="/view/components/css/filter-modal.css" />
+    <link rel="stylesheet" href="/view/components/css/sort-modal.css" />
+    <link rel="stylesheet" href="/view/components/css/modal.css" />
+    
+    
+    <script src="../../../controller/components/filter-modal.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+    <script src="../../../controller/components/sort-modal.js" defer></script>
+    <script src="../../../controller/components/modal.js" type = "module"  defer></script>
+    
+    <script src="../../../services/business-side/HomePageService.js" type="module"  defer></script>
+
+</head>
+<body>
+   
+    <div id="header-placeholder" data-user-type="business"></div>
+   
+    <main class="main-content">
+        <section class="items-section">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="item-list">
+                    <span class="mobile-text">ITEM LIST</span>
+                    <span class="desktop-text">YOUR ITEM LISTS</span>
+                </button>
+                <!-- <a href="#" class="discover-link">Discover more</a> -->
+            </div>
+
+            <div class="filter-sort">
+                <button class="filter-btn" onclick="openFilterModal()">Filter</button>
+                <button class="sort-btn" onclick="openSortModal()">Sort</button>
+            </div>
+
+            <div class="items-grid" id="itemsGrid">
+            </div>
+        </section>
+    </main>
+
+    <button class="fab" id="addBtn" aria-label="Add new item">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M16 8V24M8 16H24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+    </button>
+    
+    <div id="filter-modal-container"></div>
+
+   
+    <div id="sort-modal-container"></div>
+
+    
+    <div id="footer-placeholder" data-user-type="business"></div>
+    
+</body>
+</html>
