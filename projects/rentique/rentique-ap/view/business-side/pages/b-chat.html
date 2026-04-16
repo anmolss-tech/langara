@@ -1,0 +1,107 @@
+<!-- @Made By:  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rentique - Chat</title>
+
+  <meta name="theme-color" content="#06324f">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/logos/rentique-sub.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/view/components/css/var.css" />
+  <link rel="stylesheet" href="../css/b-chat-header.css" />
+  <link rel="stylesheet" href="../css/b-chat.css">
+  <link rel="stylesheet" href="/view/components/css/modal.css" />
+  <script src="../../../controller/components/modal.js"  type = "module" defer></script>
+</head>
+<body>
+  <div class="mobile-header-icons">
+    <a href="./b-browse.html"><img src="/assets/icons/Icon_search.svg" alt="Search" class="icon search"></a>
+    <a href="./b-home.html"><img src="/assets/logos/rentique-sub.png" alt="Rentique" class="logo-center"></a>
+    <div class="right-icons">
+      <a href="./b-chat.html"><img src="/assets/icons/Icon_chat.svg" alt="Chat" class="icon"></a>
+      <div class="user-icon-menu">
+        <a href="./b-profile.html"><img src="/assets/icons/Icon_shop_2.svg" alt="Profile" class="mobile-profile-pic" id="mobileProfilePic"></a>
+        <div class="user-icon-menu__dropdown">
+          <a href="#" data-link-type="logout">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="chat-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo-section">
+          <a href="./b-home.html" class="sidebar-back-link">
+            <svg class="sidebar-back-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </a>
+          <img src="/assets/logos/rentique-main.png" alt="Centigne Logo" class="sidebar-logo">
+        </div>
+        <h2 class="all-chat-title">ALL CHATS</h2>
+      </div>
+
+      <div class="chat-list" id="chatList">
+      </div>
+    </aside>
+
+    <main class="main-chat">
+      <header class="chat-page-header">
+        <nav class="chat-header-nav">
+          <a href="./b-home.html" class="nav-link">BROWSE</a>
+          <a href="./b-chat.html" class="nav-link active">CHAT LIST</a>
+          <a href="./b-profile.html" class="nav-link">PROFILE</a>
+        </nav>
+        <div class="chat-header-right">
+          <div class="user-menu">
+            <button type="button" class="user-menu__trigger" aria-haspopup="true" aria-expanded="false">
+              <span class="user-greeting" id="userGreeting">Hi, Rentee</span>
+              <svg class="user-menu__chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.41 0.59L6 5.17L10.59 0.59L12 2L6 8L0 2L1.41 0.59Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <div class="user-menu__dropdown" hidden>
+              <a href="#" data-link-type="logout">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="chat-content-wrapper">
+        <div class="chat-window-card">
+          <div class="chat-header">
+            <svg id="backToChatListBtn" class="back-icon-chat" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+            <h2 class="chat-title" id="chatTitle">Select a chat</h2>
+          </div>
+          <div class="messages-area" id="messagesArea">
+            <div class="messages-container" id="messagesContainer">
+            </div>
+          </div>
+          <div class="message-input-area">
+            <div class="input-container">
+              <input type="text" class="message-input" placeholder="Type your message" id="messageInput">
+              <button class="send-button" id="sendButton">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../../../controller/components/components.js" type="module" defer></script>
+  <script src="../../../controller/business-side/b-chat.js" type="module" defer></script>
+</body>
+</html>
